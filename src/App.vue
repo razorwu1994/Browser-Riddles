@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <router-view/>
-    <hint>Check out</hint>
   </div>
 </template>
 
