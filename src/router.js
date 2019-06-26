@@ -9,7 +9,7 @@ Vue.use(Router);
 
 export default new Router({
   mode: "hash",
-  base: "/riddles/",
+  base: "/Browser-Riddles/",
   routes: [
     {
       path: "/",
