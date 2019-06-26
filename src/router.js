@@ -8,6 +8,7 @@ import LevelIV from "./views/LevelIV.vue";
 Vue.use(Router);
 
 export default new Router({
+  mode: "hash",
   base: "/riddles/",
   routes: [
     {
