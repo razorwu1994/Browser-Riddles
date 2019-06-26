@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+import LevelI from "./views/LevelI.vue";
+import LevelII from "./views/LevelII.vue";
+import LevelIII from "./views/LevelIII.vue";
+import LevelIV from "./views/LevelIV.vue";
 
 Vue.use(Router);
 
@@ -10,9 +13,20 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Home
+      redirect: "/vue"
     },
+    {
+      path: "/vue",
+      name: "LevelI",
+      component: LevelI
+    },
+    {
+      path: "/react",
+      redirect: "/howManyCircles"
+    },
+    { path: "/howManyCircles", name: "LevelII", component: LevelII },
+    { path: "/12", name: "LevelIII", component: LevelIII },
+    { path: "/realDB", name: "LevelIV", component: LevelIV },
     {
       path: "/about",
       name: "about",
