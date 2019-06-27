@@ -9,6 +9,13 @@
 // import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "home"
+  name: "home",
+  beforeCreate: function() {
+    if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
+      this.$router.push("*");
+    } else {
+      sessionStorage.setItem("RIDDLES_LEVEL_I_VUE", "1");
+    }
+  }
 };
 </script>

@@ -20,6 +20,13 @@ export default {
       res = await res.json();
       this.data = res;
     }
+  },
+  beforeCreate: function() {
+    if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
+      this.$router.push("*");
+    } else {
+      sessionStorage.setItem("RIDDLES_LEVEL_III_LOCATION", "1");
+    }
   }
 };
 </script>

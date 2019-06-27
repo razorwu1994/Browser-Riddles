@@ -3,6 +3,30 @@
     <router-view/>
   </div>
 </template>
+<script>
+export default {
+  beforeMount: function() {
+    this.verifyRefresh();
+  },
+  methods: {
+    verifyRefresh() {
+      if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
+        this.$router.push("*");
+      } else if (!localStorage.getItem("IWANNAADIFFENTVALUE")) {
+        this.$router.push("/");
+      } else if (
+        this.$router.currentRoute.name === "notFound" ||
+        !this.$router.currentRoute.name
+      ) {
+        this.$router.push("/realDB");
+      }
+    }
+  },
+  destroyed() {
+    sessionStorage.clear();
+  }
+};
+</script>
 
 <style>
 #app {

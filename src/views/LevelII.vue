@@ -20,6 +20,17 @@
     >
   </div>
 </template>
+<script>
+export default {
+  beforeCreate: function() {
+    if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
+      this.$router.push("*");
+    } else {
+      sessionStorage.setItem("RIDDLES_LEVEL_II_CIRCLES", "1");
+    }
+  }
+};
+</script>
 
 <style scoped>
 #tripletsWrapper {
