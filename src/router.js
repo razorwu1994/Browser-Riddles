@@ -16,10 +16,10 @@ export default new Router({
   routes: [
     {
       path: "/",
-      redirect: "/vue"
+      redirect: "/competitor"
     },
     {
-      path: "/vue",
+      path: "/competitor",
       name: "LevelI",
       component: LevelI
     },
