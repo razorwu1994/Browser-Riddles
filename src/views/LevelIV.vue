@@ -1,40 +1,38 @@
-
 <template>
   <div>
-    <h1>
-      <p>
-        <span class="p">P</span>aul
-        <span class="p">r</span>at<span class="p">e</span>s
-        <span class="p">s</span>ong
-        o<span class="p">f</span>
-        <span class="p"> 5</span> seconds of summer
-      </p>
-    </h1>
-    <div v-if="this.key">
-      <h2>Go To /graduation please :)</h2>
-    </div>
+    <h1>{{data[0].current}}</h1>
+    <h3 id="hide">This text seems come from somewhere but where???</h3>
   </div>
 </template>
 <script>
 export default {
   data: function() {
     return {
-      key:
-        localStorage.getItem("IWANNAADIFFENTVALUE") !== "yes" &&
-        localStorage.getItem("IWANNAADIFFENTVALUE") != null
+      data: "dd"
     };
   },
   name: "LevelIV",
-  beforeCreate: function() {
-    if (!localStorage.getItem("IWANNAADIFFENTVALUE")) {
-      localStorage.setItem("IWANNAADIFFENTVALUE", "yes");
+  asyncComputed: {
+    async getData() {
+      let res = await fetch(
+        "https://my-json-server.typicode.com/razorwu1994/fakeDB/info"
+      );
+      res = await res.json();
+      this.data = res;
     }
-    sessionStorage.setItem("RIDDLES_LEVEL_IV_PAUL", "1");
+  },
+  beforeCreate: function() {
+    if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
+      this.$router.push("/aintnowayout");
+    } else {
+      sessionStorage.setItem("RIDDLES_LEVEL_IV_LOCATION", "1");
+    }
   }
 };
 </script>
 
 <style scoped>
-.p {
+#hide {
+  color: white;
 }
 </style>

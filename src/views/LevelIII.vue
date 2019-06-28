@@ -1,38 +1,65 @@
 <template>
-  <div>
-    <h1>{{data[0].current}}</h1>
-    <h3 id="hide">This text seems come from somewhere but where???</h3>
+  <div class="end">
+    <div>
+      <div v-if="sync !== async" class="row">
+        Why are we always inconsistent :(
+        <strong>(sort of)</strong>
+      </div>
+      <span v-if="sync !== async">{{async}}</span>
+    </div>
+    <div>
+      <button class="row" @click="syncIncrement()">Click me Hard!!!!</button>
+      {{sync}}
+    </div>
   </div>
 </template>
 <script>
+import { setTimeout } from "timers";
 export default {
   data: function() {
+    let init = new Date();
+    init = `${init.getFullYear()}/${init.getMonth() + 1}/${init.getDate()}`;
     return {
-      data: "dd"
+      sync: init,
+      async: init,
+      init: init
     };
   },
-  name: "LevelIII",
-  asyncComputed: {
-    async getData() {
-      let res = await fetch(
-        "https://my-json-server.typicode.com/razorwu1994/fakeDB/info"
-      );
-      res = await res.json();
-      this.data = res;
+  methods: {
+    syncIncrement: function() {
+      let tmp = new Date(new Date(this.sync).getTime() + 8.64e7);
+      this.sync = `${tmp.getFullYear()}/${tmp.getMonth() + 1}/${tmp.getDate()}`;
+      this.asyncIncrement().then(resolve => resolve);
+    },
+    asyncIncrement: async function() {
+      const add = () =>
+        new Promise(resolve =>
+          setTimeout(() => {
+            let tmp = new Date(new Date(this.async).getTime() + 8.64e7);
+            this.async = `${tmp.getFullYear()}/${tmp.getMonth() +
+              1}/${tmp.getDate()}`;
+            resolve("done");
+          }, Math.min(Math.random() * 5000 + 2000, 1500))
+        );
+      return await add();
     }
   },
   beforeCreate: function() {
     if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
       this.$router.push("/aintnowayout");
     } else {
-      sessionStorage.setItem("RIDDLES_LEVEL_III_LOCATION", "1");
+      sessionStorage.setItem("RIDDLES_LEVEL_III_TIME", "1");
     }
   }
 };
 </script>
 
 <style scoped>
-#hide {
-  color: white;
+.row {
+  font-size: 30px;
+  font-weight: bold;
+  display: inline;
+  margin: 10px;
+  font-family: "Courier New", Courier, monospace;
 }
 </style>

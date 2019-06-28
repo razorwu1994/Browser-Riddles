@@ -5,6 +5,7 @@ import LevelII from "./views/LevelII.vue";
 import LevelIII from "./views/LevelIII.vue";
 import LevelIV from "./views/LevelIV.vue";
 import LevelV from "./views/LevelV.vue";
+import LevelVI from "./views/LevelVI.vue";
 
 Vue.use(Router);
 
@@ -27,8 +28,9 @@ export default new Router({
     },
     { path: "/howManyCircles", name: "LevelII", component: LevelII },
     { path: "/12", name: "LevelIII", component: LevelIII },
-    { path: "/realDB", name: "LevelIV", component: LevelIV },
-    { path: "/graduation", name: "LevelV", component: LevelV },
+    { path: "/async", name: "LevelIII", component: LevelIV },
+    { path: "/realDB", name: "LevelIV", component: LevelV },
+    { path: "/graduation", name: "LevelV", component: LevelVI },
     {
       path: "/aintnowayout",
       name: "nowayout",
