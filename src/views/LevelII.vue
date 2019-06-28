@@ -35,6 +35,8 @@ export default {
 <style scoped>
 #tripletsWrapper {
   margin: auto;
+  display: flex;
+  justify-content: center;
   width: 80vw;
 }
 .triplets {
