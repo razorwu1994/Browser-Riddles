@@ -24,9 +24,9 @@ export default new Router({
     },
     {
       path: "/react",
-      redirect: "/howManyCircles"
+      redirect: "/howManyEllipses"
     },
-    { path: "/howManyCircles", name: "LevelII", component: LevelII },
+    { path: "/howManyEllipses", name: "LevelII", component: LevelII },
     { path: "/12", name: "LevelIII", component: LevelIII },
     { path: "/async", name: "LevelIII", component: LevelIV },
     { path: "/realDB", name: "LevelIV", component: LevelV },
