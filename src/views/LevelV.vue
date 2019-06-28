@@ -39,7 +39,7 @@ export default {
     if (!localStorage.getItem("IWANNAADIFFENTVALUE")) {
       localStorage.setItem("IWANNAADIFFENTVALUE", "yes");
     }
-    sessionStorage.setItem("RIDDLES_LEVEL_V_PAUL", "1");
+    sessionStorage.setItem("RIDDLES_LEVEL_V_ZAWARUDO", "1");
   }
 };
 </script>

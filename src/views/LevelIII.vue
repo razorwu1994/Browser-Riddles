@@ -5,7 +5,7 @@
         Why are we always inconsistent :(
         <strong>(sort of)</strong>
       </div>
-      <span v-if="sync !== async">{{async}}</span>
+      <span>{{async}}</span>
     </div>
     <div>
       <button class="row" @click="syncIncrement()">Click me Hard!!!!</button>
