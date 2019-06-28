@@ -11,7 +11,7 @@ export default {
   methods: {
     verifyRefresh() {
       if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
-        this.$router.push("*");
+        this.$router.push("/aintnowayout");
       } else if (!localStorage.getItem("IWANNAADIFFENTVALUE")) {
         this.$router.push("/");
       } else if (

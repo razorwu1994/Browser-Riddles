@@ -23,7 +23,7 @@ export default {
   },
   beforeCreate: function() {
     if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
-      this.$router.push("*");
+      this.$router.push("/aintnowayout");
     } else {
       sessionStorage.setItem("RIDDLES_LEVEL_III_LOCATION", "1");
     }

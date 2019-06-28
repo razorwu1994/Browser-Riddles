@@ -24,7 +24,7 @@
 export default {
   beforeCreate: function() {
     if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
-      this.$router.push("*");
+      this.$router.push("/aintnowayout");
     } else {
       sessionStorage.setItem("RIDDLES_LEVEL_II_CIRCLES", "1");
     }
@@ -38,19 +38,16 @@ export default {
   width: 80vw;
 }
 .triplets {
-  position: relative;
+  position: absolute;
 }
 #bigbrohda {
   z-index: 9999999999;
-  right: -300px;
 }
 
 #middlebrohda {
   z-index: 2;
-  left: 0px;
 }
 #lilbrohda {
   z-index: 1;
-  left: -300px;
 }
 </style>
