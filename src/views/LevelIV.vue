@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{data[0].current}}</h1>
-    <h3 id="hide">This text seems come from somewhere but where???</h3>
+    <h3 id="hint">This text seems come from somewhere but where???</h3>
   </div>
 </template>
 <script>
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style scoped>
-#hide {
+#hint {
   color: white;
 }
 </style>
