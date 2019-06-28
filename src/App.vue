@@ -52,4 +52,12 @@ export default {
 .logo {
   width: 300px;
 }
+
+button {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  user-select: none;
+  color: white;
+  background: #42b983;
+}
 </style>
