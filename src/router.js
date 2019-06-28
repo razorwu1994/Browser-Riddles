@@ -31,7 +31,7 @@ export default new Router({
     { path: "/12", name: "LevelIII", component: LevelIII },
     { path: "/async", name: "LevelIV", component: LevelIV },
     { path: "/realDB", name: "LevelV", component: LevelV },
-    { path: "/graduation", name: "LevelV", component: LevelVI },
+    { path: "/x87|6.5", name: "LevelV", component: LevelVI },
     { path: "/avacado", name: "LevelVII", component: LevelVII },
     {
       path: "/aintnowayout",

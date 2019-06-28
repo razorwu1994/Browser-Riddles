@@ -21,7 +21,7 @@
       </p>
     </h1>
     <div v-if="this.key">
-      <h2>Go To /graduation please :)</h2>
+      <h2>Go To /x87|6.5 please :)</h2>
     </div>
   </div>
 </template>

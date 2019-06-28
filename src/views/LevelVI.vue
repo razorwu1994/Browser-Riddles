@@ -2,7 +2,7 @@
 <template>
   <div>
     <div>
-      <h1>X 87 / 6.5</h1>
+      <h1>X 87 | 6.5</h1>
       <div class="barcode">
         <img src="../assets/asdf.png">
         <img src="../assets/zxcv.png">
