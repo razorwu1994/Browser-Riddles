@@ -1,5 +1,9 @@
 # Browser Riddles
 
+## Other Language Intro
+
+[中文说明](https://github.com/razorwu1994/Browser-Riddles/wiki/%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E)
+
 ## Motivation
 
 ```
