@@ -30,13 +30,22 @@ export default new Router({
     { path: "/realDB", name: "LevelIV", component: LevelIV },
     { path: "/graduation", name: "LevelV", component: LevelV },
     {
-      path: "*",
-      name: "notFound",
+      path: "/aintnowayout",
+      name: "nowayout",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+        import(/* webpackChunkName: "about" */ "./views/Lock.vue")
+    },
+    {
+      path: "*",
+      name: "deadEnd",
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/DeadEnd.vue")
     }
   ]
 });

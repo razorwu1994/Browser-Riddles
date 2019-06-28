@@ -12,7 +12,7 @@ export default {
   name: "home",
   beforeCreate: function() {
     if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
-      this.$router.push("*");
+      this.$router.push("/aintnowayout");
     } else {
       sessionStorage.setItem("RIDDLES_LEVEL_I_VUE", "1");
     }
