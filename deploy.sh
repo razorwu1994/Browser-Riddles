@@ -7,7 +7,7 @@ set -e
 npm run build
 
 #remove source map
-rimraf dist/**/*.map
+rm -rf dist/**/*.map
 
 # navigate into the build output directory
 cd dist
