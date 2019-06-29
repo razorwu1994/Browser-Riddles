@@ -1,6 +1,6 @@
 
 <template>
-  <div class="flashy">Congrats!!!, you've made it to the last level(currently)</div>
+  <div class="flashy">Congrats!!!, you've reached the top of this tower</div>
 </template>
 <script>
 export default {};

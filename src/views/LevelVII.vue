@@ -1,13 +1,8 @@
 
 <template>
   <div>
-    <good>
-      <audio autoplay loop preload>
-        <source src="../assets/path.mp3">
-      </audio>
-    </good>
     <broken>
-      <JAY src="../assets/path2.mp3"/>
+      <JAY src="../assets/path2.mp3" />
       <PACK Just say it out loudly and proudly></PACK>
     </broken>
     <span class="delightful">
@@ -15,7 +10,7 @@
       <h2>/avacado</h2>to continue your browser riddle adventure
     </span>
     <div class="descriptive">
-      <br>One of my song is broken, can you post & fix it
+      <br />One of my song is broken, can you post & fix it
     </div>
   </div>
 </template>

@@ -2,9 +2,10 @@
   <div class="general">
     <h1>General Rule:</h1>
     <h2>
-      <p>For each level, all you need is to find a keyword and replace with current word after last '/'</p>
+      <p>Welcome to Browser Riddles</p>
+      <p>To step forward, all you need is to find a keyword from current level and replace it with the current word after last '/'</p>
     </h2>
-    <h3>Some levels may contain audio/video file, so make sure lower down your volume a bit to avoid any unpleasant experience :)</h3>
+    <h3>Some levels may contain audio/video file, so please make sure lower down your volume a bit to avoid any unpleasant experience :)</h3>
     <div class="spoilerWrapper">
       <button @click="toggleHint()" class="spoilerBtn">
         <h2>SPOILERS!!! HINTS</h2>
@@ -67,8 +68,15 @@ export default {
   font-size: 35px;
   color: rgb(234, 94, 117);
 }
+
 .spoilerBtn {
+  background: rgba(234, 94, 117, 0.9);
+  margin-bottom: 10px;
+}
+.spoilerBtn:hover {
   background: rgb(234, 94, 117);
+  transform: scale(1.1);
+  transition: all 0.5s;
 }
 .spoilerWrapper {
   text-align: center;
