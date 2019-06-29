@@ -8,6 +8,7 @@ import LevelV from "./views/LevelV.vue";
 import LevelVI from "./views/LevelVI.vue";
 import LevelVII from "./views/LevelVII.vue";
 import LevelVIII from "./views/LevelVIII.vue";
+import LevelIX from "./views/LevelIX.vue";
 
 Vue.use(Router);
 
@@ -35,6 +36,7 @@ export default new Router({
     { path: "/x87|6.5", name: "LevelVI", component: LevelVI },
     { path: "/avacado", name: "LevelVII", component: LevelVII },
     { path: "/florida", name: "LevelVIII", component: LevelVIII },
+    { path: "/polydactylCat", name: "LevelIX", component: LevelIX },
     {
       path: "/aintnowayout",
       name: "nowayout",

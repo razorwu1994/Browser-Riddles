@@ -19,22 +19,18 @@ export default {
   },
 
   data: function() {
-    return { playMusic: false };
+    return { playMusic: this.playMusicOrNot() };
   },
   watch: {
     $route(to, from) {
-      this.playMusic =
-        (sessionStorage.getItem("RIDDLES_LEVEL_I_VUE") == 1 &&
-          sessionStorage.getItem("RIDDLES_LEVEL_II_CIRCLES") == 1 &&
-          sessionStorage.getItem("RIDDLES_LEVEL_III_TIME") == 1 &&
-          sessionStorage.getItem("RIDDLES_LEVEL_IV_LOCATION") == 1 &&
-          sessionStorage.getItem("RIDDLES_LEVEL_V_ZAWARUDO") == 1 &&
-          sessionStorage.getItem("RIDDLES_LEVEL_VI_3DTRANSFORM") == 1) ||
-        sessionStorage.getItem("RIDDLES_LEVEL_VII_DRAGONCAT") == 1;
+      this.playMusic = this.playMusicOrNot();
     }
   },
   methods: {
     verifyRefresh() {
+      if (sessionStorage.getItem("RIDDLES_LEVEL_VII_DRAGONCAT") == 1) {
+        this.$router.push("/avacado");
+      }
       if (localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH") === "yes") {
         this.$router.push("/aintnowayout");
       } else if (!localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH")) {
@@ -45,6 +41,17 @@ export default {
       ) {
         this.$router.push("/realDB");
       }
+    },
+    playMusicOrNot() {
+      return (
+        (sessionStorage.getItem("RIDDLES_LEVEL_I_VUE") == 1 &&
+          sessionStorage.getItem("RIDDLES_LEVEL_II_CIRCLES") == 1 &&
+          sessionStorage.getItem("RIDDLES_LEVEL_III_TIME") == 1 &&
+          sessionStorage.getItem("RIDDLES_LEVEL_IV_LOCATION") == 1 &&
+          sessionStorage.getItem("RIDDLES_LEVEL_V_ZAWARUDO") == 1 &&
+          sessionStorage.getItem("RIDDLES_LEVEL_VI_3DTRANSFORM") == 1) ||
+        sessionStorage.getItem("RIDDLES_LEVEL_VII_DRAGONCAT") == 1
+      );
     }
   },
   destroyed() {

@@ -10,11 +10,12 @@
       <JAY src="../assets/path2.mp3"/>
       <PACK Just say it out loudly and proudly></PACK>
     </broken>
-    <span
-      class="delightful"
-    >Here you are, congrats on making this way, enjoy this little bonus music track and from now on. You can directly go to /avacado as a saving progress</span>
+    <span class="delightful">
+      Here you are, congrats on making this way, enjoy this little bonus music track. From now on, you can directly go to
+      <h2>/avacado</h2>to continue your browser riddle adventure
+    </span>
     <div class="descriptive">
-      <br>My second song is broken, can you post & fix it
+      <br>One of my song is broken, can you post & fix it
     </div>
   </div>
 </template>

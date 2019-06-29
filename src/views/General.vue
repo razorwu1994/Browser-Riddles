@@ -23,11 +23,13 @@ const HINTS = {
     "Who is 'Who'? and Who is 'Me', where could an external(if not from the same project) data come from",
   "/realDB":
     "Words doesn't really make sense, try to find out other info with your favorite dev tool",
-  "/notFound":
+  "/aintnowayout":
     "Cheers to complete the part I of this level, What/Who keeps me here? Try to find it and escape. Do not give up",
   "/x87|6.5": "Wow, a barcode, can CSS help instead of bending your neck?",
   "/avacado":
-    "Avacado is just a typo, sorry about that. Try to focus on what is really broken ,have you checked out the HTML yet"
+    "Avacado is just a typo, sorry about that. Try to focus on what is really broken ,have you checked out the HTML yet",
+  "/florida":
+    "What are the few things come to your mind when talk about florida, sunshine, disney world, Ernest Hemingway? "
 };
 export default {
   data: function() {
