@@ -4,24 +4,24 @@
     <h1>
       <p>
         <JO class="jojo1">
-          <span class="justStyle">P</span>assione
+          <span class="lookatme">P</span>assione
         </JO>
         <JO class="jojo2">
-          <span class="justStyle">r</span>
-          <span class="justStyle">e</span>ro
+          <span class="lookatme">r</span>
+          <span class="lookatme">e</span>ro
         </JO>
         <JO class="jojo3">
-          <span class="justStyle">s</span>peedwagonnnnnmn
-          <span class="justStyle">s</span>peedwagonnnnnmn
+          <span class="lookatme">s</span>peedwagonnnnnmn
+          <span class="lookatme">s</span>peedwagonnnnnmn
         </JO>
         <JO class="jojo4">
-          <span class="justStyle">f</span>ighting gold
-          <span class="justStyle">5</span>
+          <span class="lookatme">f</span>ighting gold
+          <span class="lookatme">5</span>
         </JO>
       </p>
     </h1>
     <div v-if="this.key">
-      <h2>Go To /x87|6.5 please :)</h2>
+      <h2 class="tada">If you completed every level in this session, Go To /x87|6.5 please :)</h2>
     </div>
   </div>
 </template>
@@ -30,14 +30,17 @@ export default {
   data: function() {
     return {
       key:
-        localStorage.getItem("IWANNAADIFFENTVALUE") !== "yes" &&
-        localStorage.getItem("IWANNAADIFFENTVALUE") != null
+        localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH") !== "yes" &&
+        localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH") != null
     };
   },
   name: "LevelV",
   beforeCreate: function() {
-    if (!localStorage.getItem("IWANNAADIFFENTVALUE")) {
-      localStorage.setItem("IWANNAADIFFENTVALUE", "yes");
+    if (localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH") === "yes") {
+      this.$router.push("/aintnowayout");
+    }
+    if (!localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH")) {
+      localStorage.setItem("GIVEMEADIFFERENTVALUETHENREFRESH", "yes");
     }
     sessionStorage.setItem("RIDDLES_LEVEL_V_ZAWARUDO", "1");
   }
@@ -45,7 +48,8 @@ export default {
 </script>
 
 <style scoped>
-.justStyle {
+.lookatme {
+  line-height: inherit;
 }
 .jojo1 {
   color: rgb(234, 94, 117);
@@ -58,5 +62,8 @@ export default {
 }
 .jojo4 {
   color: rgb(255, 215, 0);
+}
+.tada {
+  color: rgb(255, 120, 0);
 }
 </style>

@@ -7,6 +7,7 @@ import LevelIV from "./views/LevelIV.vue";
 import LevelV from "./views/LevelV.vue";
 import LevelVI from "./views/LevelVI.vue";
 import LevelVII from "./views/LevelVII.vue";
+import LevelVIII from "./views/LevelVIII.vue";
 
 Vue.use(Router);
 
@@ -31,8 +32,9 @@ export default new Router({
     { path: "/12", name: "LevelIII", component: LevelIII },
     { path: "/async", name: "LevelIV", component: LevelIV },
     { path: "/realDB", name: "LevelV", component: LevelV },
-    { path: "/x87|6.5", name: "LevelV", component: LevelVI },
+    { path: "/x87|6.5", name: "LevelVI", component: LevelVI },
     { path: "/avacado", name: "LevelVII", component: LevelVII },
+    { path: "/florida", name: "LevelVIII", component: LevelVIII },
     {
       path: "/aintnowayout",
       name: "nowayout",

@@ -1,18 +1,43 @@
 <template>
   <div id="app">
     <router-view/>
+    <General/>
+    <audio autoplay loop preload v-if="playMusic">
+      <source src="./assets/path.mp3">
+    </audio>
   </div>
 </template>
 <script>
+import General from "./views/General.vue";
+
 export default {
   beforeMount: function() {
     this.verifyRefresh();
   },
+  components: {
+    General
+  },
+
+  data: function() {
+    return { playMusic: false };
+  },
+  watch: {
+    $route(to, from) {
+      this.playMusic =
+        (sessionStorage.getItem("RIDDLES_LEVEL_I_VUE") == 1 &&
+          sessionStorage.getItem("RIDDLES_LEVEL_II_CIRCLES") == 1 &&
+          sessionStorage.getItem("RIDDLES_LEVEL_III_TIME") == 1 &&
+          sessionStorage.getItem("RIDDLES_LEVEL_IV_LOCATION") == 1 &&
+          sessionStorage.getItem("RIDDLES_LEVEL_V_ZAWARUDO") == 1 &&
+          sessionStorage.getItem("RIDDLES_LEVEL_VI_3DTRANSFORM") == 1) ||
+        sessionStorage.getItem("RIDDLES_LEVEL_VII_DRAGONCAT") == 1;
+    }
+  },
   methods: {
     verifyRefresh() {
-      if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
+      if (localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH") === "yes") {
         this.$router.push("/aintnowayout");
-      } else if (!localStorage.getItem("IWANNAADIFFENTVALUE")) {
+      } else if (!localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH")) {
         this.$router.push("/");
       } else if (
         this.$router.currentRoute.name === "notFound" ||
@@ -59,5 +84,19 @@ button {
   user-select: none;
   color: white;
   background: #42b983;
+}
+
+.descriptive {
+  font-size: 30px;
+  font-weight: bold;
+  display: inline;
+  margin: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.delightful {
+  color: royalblue;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
 }
 </style>

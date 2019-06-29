@@ -26,6 +26,7 @@ export default {
     ) {
       this.$router.push("/");
     }
+    sessionStorage.setItem("RIDDLES_LEVEL_VI_3DTRANSFORM", "1");
   }
 };
 </script>

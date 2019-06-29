@@ -23,7 +23,7 @@
 <script>
 export default {
   beforeCreate: function() {
-    if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
+    if (localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH") === "yes") {
       this.$router.push("/aintnowayout");
     } else {
       sessionStorage.setItem("RIDDLES_LEVEL_II_CIRCLES", "1");

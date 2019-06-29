@@ -4,7 +4,7 @@
     <h2>Who keeps me here</h2>
     <div class="side">
       <button @click="restart()" v-if="showRestart">
-        <h1>(You've been really struggle)Restart the game to get out!</h1>
+        <h1>(You've been really struggle) GIVE UP (I promise it is restarting the game)</h1>
       </button>
     </div>
   </div>
@@ -21,11 +21,11 @@ export default {
   },
   data: function() {
     return {
-      showRestart: parseInt(localStorage.getItem("REFRESH_TIME"), 10) > 5
+      showRestart: parseInt(localStorage.getItem("REFRESH_TIME"), 10) > 10
     };
   },
   mounted: function() {
-    localStorage.setItem("IWANNAADIFFENTVALUE", "yes");
+    localStorage.setItem("GIVEMEADIFFERENTVALUETHENREFRESH", "yes");
   },
   methods: {
     restart: function() {

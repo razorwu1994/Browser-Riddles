@@ -1,14 +1,14 @@
 <template>
   <div class="end">
     <div>
-      <div v-if="sync !== async" class="row">
-        Why are we always inconsistent :(
+      <div v-if="sync !== async" class="descriptive">
+        :( Why sometimes we are inconsistent !
         <strong>(sort of)</strong>
       </div>
       <span>{{async}}</span>
     </div>
     <div>
-      <button class="row" @click="syncIncrement()">Click me Hard!!!!</button>
+      <button @click="syncIncrement()" class="descriptive">Click me Hard!!!!</button>
       {{sync}}
     </div>
   </div>
@@ -45,7 +45,7 @@ export default {
     }
   },
   beforeCreate: function() {
-    if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
+    if (localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH") === "yes") {
       this.$router.push("/aintnowayout");
     } else {
       sessionStorage.setItem("RIDDLES_LEVEL_III_TIME", "1");
@@ -56,10 +56,5 @@ export default {
 
 <style scoped>
 .row {
-  font-size: 30px;
-  font-weight: bold;
-  display: inline;
-  margin: 10px;
-  font-family: "Courier New", Courier, monospace;
 }
 </style>

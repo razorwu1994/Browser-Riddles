@@ -11,7 +11,7 @@
 export default {
   name: "home",
   beforeCreate: function() {
-    if (localStorage.getItem("IWANNAADIFFENTVALUE") === "yes") {
+    if (localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH") === "yes") {
       this.$router.push("/aintnowayout");
     } else {
       sessionStorage.setItem("RIDDLES_LEVEL_I_VUE", "1");
