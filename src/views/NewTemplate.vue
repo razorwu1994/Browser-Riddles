@@ -20,6 +20,10 @@ export default {
       return distance < radius + offset && distance > radius - offset;
     },
     handleMouseDown: function(e) {
+      let canvas = this.$refs.canvas;
+      let canvasOffset = { left: canvas.offsetLeft, top: canvas.offsetTop };
+      let offsetX = canvasOffset.left;
+      let offsetY = canvasOffset.top;
       e.preventDefault();
       // get the mouse position
       let mouseX = parseInt(e.clientX - offsetX);
@@ -27,7 +31,7 @@ export default {
       if (
         this.checkIfOnCircle({ x: 500, y: 500 }, 300, { x: mouseX, y: mouseY })
       ) {
-        console.log("on the mark", rotateVar);
+        console.log("on the mark");
       }
     },
     loop: function() {
