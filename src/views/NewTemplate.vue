@@ -10,6 +10,26 @@ export default {
     this.loop();
   },
   methods: {
+    // called when user clicks the mouse
+    checkIfOnCircle: function(point, radius, mousePos) {
+      const offset = 50;
+      let distance = Math.sqrt(
+        Math.pow(point.x - mousePos.x, 2) + Math.pow(point.y - mousePos.y, 2)
+      );
+
+      return distance < radius + offset && distance > radius - offset;
+    },
+    handleMouseDown: function(e) {
+      e.preventDefault();
+      // get the mouse position
+      let mouseX = parseInt(e.clientX - offsetX);
+      let mouseY = parseInt(e.clientY - offsetY);
+      if (
+        this.checkIfOnCircle({ x: 500, y: 500 }, 300, { x: mouseX, y: mouseY })
+      ) {
+        console.log("on the mark", rotateVar);
+      }
+    },
     loop: function() {
       // canvas letiables
       let canvas = this.$refs.canvas;
@@ -92,30 +112,8 @@ export default {
       ctx.restore();
       ctx.save();
 
-      // called when user clicks the mouse
-      function checkIfOnCircle(point, radius, mousePos) {
-        const offset = 50;
-        let distance = Math.sqrt(
-          Math.pow(point.x - mousePos.x, 2) + Math.pow(point.y - mousePos.y, 2)
-        );
-
-        return distance < radius + offset && distance > radius - offset;
-      }
-      function handleMouseDown(e) {
-        e.preventDefault();
-
-        // get the mouse position
-        let mouseX = parseInt(e.clientX - offsetX);
-        let mouseY = parseInt(e.clientY - offsetY);
-        if (
-          checkIfOnCircle({ x: 500, y: 500 }, 300, { x: mouseX, y: mouseY })
-        ) {
-          console.log("on the mark", rotateVar);
-        }
-      }
-
       // listen for mousedown events
-      canvas.addEventListener("mousedown", handleMouseDown);
+      canvas.addEventListener("mousedown", this.handleMouseDown);
       window.requestAnimationFrame(this.loop);
     }
   },

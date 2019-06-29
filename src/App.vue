@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <router-view/>
-    <General/>
+    <router-view />
+    <General />
     <audio autoplay loop preload v-if="playMusic">
-      <source src="./assets/path.mp3">
+      <source src="./assets/path.mp3" />
     </audio>
   </div>
 </template>
@@ -17,7 +17,6 @@ export default {
   components: {
     General
   },
-
   data: function() {
     return { playMusic: this.playMusicOrNot() };
   },
@@ -50,7 +49,8 @@ export default {
           sessionStorage.getItem("RIDDLES_LEVEL_IV_LOCATION") == 1 &&
           sessionStorage.getItem("RIDDLES_LEVEL_V_ZAWARUDO") == 1 &&
           sessionStorage.getItem("RIDDLES_LEVEL_VI_3DTRANSFORM") == 1) ||
-        sessionStorage.getItem("RIDDLES_LEVEL_VII_DRAGONCAT") == 1
+        sessionStorage.getItem("RIDDLES_LEVEL_VII_DRAGONCAT") == 1 ||
+        sessionStorage.getItem("RIDDLES_LEVEL_VIII_TREASURE") == 1
       );
     }
   },
