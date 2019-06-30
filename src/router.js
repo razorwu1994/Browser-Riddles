@@ -9,7 +9,9 @@ import LevelVI from "./views/LevelVI.vue";
 import LevelVII from "./views/LevelVII.vue";
 import LevelVIII from "./views/LevelVIII.vue";
 import LevelIX from "./views/LevelIX.vue";
-import NewTemplate from "./views/NewTemplate.vue";
+import Solar from "./views/Solar.vue";
+import Ceiling from "./views/Ceiling.vue";
+
 Vue.use(Router);
 
 export default new Router({
@@ -29,6 +31,10 @@ export default new Router({
       path: "/react",
       redirect: "/howManyEllipses"
     },
+    {
+      path: "/angular",
+      redirect: "/howManyEllipses"
+    },
     { path: "/howManyEllipses", name: "LevelII", component: LevelII },
     { path: "/12", name: "LevelIII", component: LevelIII },
     { path: "/async", name: "LevelIV", component: LevelIV },
@@ -37,7 +43,7 @@ export default new Router({
     { path: "/avacado", name: "LevelVII", component: LevelVII },
     { path: "/florida", name: "LevelVIII", component: LevelVIII },
     { path: "/polydactylCat", name: "LevelIX", component: LevelIX },
-    { path: "/new", name: "LevelIX", component: NewTemplate },
+    { path: "/new", name: "Solar", component: Solar },
     {
       path: "/aintnowayout",
       name: "nowayout",

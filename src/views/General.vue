@@ -18,8 +18,8 @@
 const HINTS = {
   "/competitor": "What is this item",
   "/howManyEllipses":
-    "Now you know it is a react logo right? Simple enough, how many Ellipses in each logo and then?",
-  "/12": "What types of function does JS support",
+    "Now you know it is a react logo right? Simple enough, how many Ellipses in each logo and then ho....",
+  "/12": "What the hell is a Promise",
   "/async":
     "Who is 'Who'? and Who is 'Me', where could an external(if not from the same project) data come from",
   "/realDB":
@@ -28,7 +28,7 @@ const HINTS = {
     "Cheers to complete the part I of this level, What/Who keeps me here? Try to find it and escape. Do not give up",
   "/x87|6.5": "Wow, a barcode, can CSS help instead of bending your neck?",
   "/avacado":
-    "Avacado is just a typo, sorry about that. Try to focus on what is really broken ,have you checked out the HTML yet",
+    "Avacado is just a typo, sorry about that. Try to focus on what is really broken",
   "/florida":
     "What are the few things come to your mind when talk about florida, sunshine, disney world, Ernest Hemingway? "
 };

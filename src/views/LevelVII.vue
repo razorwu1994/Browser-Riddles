@@ -2,7 +2,7 @@
 <template>
   <div>
     <broken>
-      <JAY src="../assets/path2.mp3" />
+      <JAY src="https://www.dropbox.com/s/6u8pgtpenw0bd8x/song.mp3?dl=0" />
       <PACK Just say it out loudly and proudly></PACK>
     </broken>
     <span class="delightful">
