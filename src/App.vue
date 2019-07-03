@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view />
-    <General />
+    <General id="general" />
     <audio autoplay loop preload v-if="playMusic">
       <source src="./assets/path.mp3" />
     </audio>
@@ -28,7 +28,7 @@ export default {
   methods: {
     verifyRefresh() {
       if (sessionStorage.getItem("RIDDLES_LEVEL_VII_DRAGONCAT") == 1) {
-        this.$router.push("/avacado");
+        // this.$router.push("/avacado");
       }
       if (localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH") === "yes") {
         this.$router.push("/aintnowayout");
@@ -67,6 +67,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  user-select: none;
 }
 #nav {
   padding: 30px;

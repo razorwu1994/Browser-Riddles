@@ -1,25 +1,90 @@
 
 <template>
   <div>
-    <svg height="800" width="800">
-      <circle cx="150" cy="150" r="100" fill="#42b983" />
-      <rect x="550" y="350" width="50" height="150" fill="rgba(234, 94, 117, 0.9)" />
-      <circle cx="150" cy="350" r="75" fill="rgba(234, 94, 117, 0.9)" />
-      <polygon
-        points="550,110 650,310 520,350 473,334"
-        style="fill:gold;stroke:rgba(234, 94, 117, 0.9);stroke-width:1"
-      />
-      <polygon
-        points="560,150 620,290 550,310"
-        style="fill:rgba(234, 94, 117, 0.9);stroke:rgba(234, 94, 117, 0.9);stroke-width:1"
-      />
-      <rect x="150" y="350" width="50" height="100" fill="gold" />
-    </svg>
+    <div
+      ref="hijack"
+      :style="`font-size:${count*4+28}px; font-weight:bold`"
+    >Hi I am jack, free me!!!</div>
+    <div class="general">
+      <h1>General Rule:</h1>
+      <h2>
+        <p>Welcome to Browser Riddles</p>
+        <p>To step forward, all you need is to find a keyword from current level and replace it with the current word after last '/'</p>
+      </h2>
+      <h3>Some levels may contain audio/video file, so please make sure lower down your volume a bit to avoid any unpleasant experience :)</h3>
+      <div class="spoilerWrapper">
+        <button @click="clickCount()" class="spoilerBtn" disabled>
+          <h2>SPOILERS!!! HINTS</h2>
+        </button>
+      </div>
+      <div v-if="count>=1" class="hint">What are you looking for</div>
+      <div v-if="count>=2" class="hint">Is this real</div>
+      <div v-if="count>=3" class="hint">See you soon</div>
+      <div v-if="count>=5" class="hint">So close</div>
+      <div v-if="count>=8" class="hint">Here you go</div>
+      <div v-if="count>=13" class="hint">/giveBackMyGeneral</div>
+    </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data: function() {
+    return { count: 0 };
+  },
+  mounted: function() {
+    let realOne = document.getElementById("general");
+    realOne.remove();
+    //good bye real one this time
+  },
+  methods: {
+    clickCount() {
+      this.count++;
+      if (this.count >= 14) {
+        this.count = 0;
+      }
+    }
+  }
+};
 </script>
 
 <style scoped>
+.general {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rosybrown;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  text-align: left;
+  margin: 10px;
+  border-radius: 4px;
+  border: 2px dashed rosybrown;
+}
+.hint {
+  font-size: 35px;
+  color: rgb(234, 94, 117);
+}
+.hint:nth-child(odd) {
+  font-size: 35px;
+  color: rgb(234, 94, 117);
+}
+
+.hint:nth-child(even) {
+  font-size: 35px;
+
+  color: gold;
+}
+
+.spoilerBtn {
+  background: rgba(234, 94, 117, 0.9);
+  margin-bottom: 10px;
+}
+.spoilerBtn:hover {
+  background: rgb(234, 94, 117);
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+.spoilerWrapper {
+  text-align: center;
+}
 </style>

@@ -42,7 +42,8 @@ export default new Router({
     { path: "/x87|6.5", name: "LevelVI", component: LevelVI },
     { path: "/avacado", name: "LevelVII", component: LevelVII },
     { path: "/florida", name: "LevelVIII", component: LevelVIII },
-    { path: "/polydactylCat", name: "LevelIX", component: LevelIX },
+    { path: "/polydactylCat", redirect: "/bamboozle" },
+    { path: "/bamboozle", name: "LevelIX", component: LevelIX },
     { path: "/new", name: "Solar", component: Solar },
     {
       path: "/aintnowayout",
