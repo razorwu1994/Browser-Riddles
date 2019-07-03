@@ -27,18 +27,22 @@ export default {
   },
   methods: {
     verifyRefresh() {
-      if (sessionStorage.getItem("RIDDLES_LEVEL_VII_DRAGONCAT") == 1) {
-        // this.$router.push("/avacado");
-      }
-      if (localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH") === "yes") {
-        this.$router.push("/aintnowayout");
-      } else if (!localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH")) {
-        this.$router.push("/");
-      } else if (
-        this.$router.currentRoute.name === "notFound" ||
-        !this.$router.currentRoute.name
-      ) {
-        this.$router.push("/realDB");
+      if (process.env.NODE === "prod") {
+        if (sessionStorage.getItem("RIDDLES_LEVEL_VII_DRAGONCAT") == 1) {
+          this.$router.push("/avacado");
+        }
+        if (
+          localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH") === "yes"
+        ) {
+          this.$router.push("/aintnowayout");
+        } else if (!localStorage.getItem("GIVEMEADIFFERENTVALUETHENREFRESH")) {
+          this.$router.push("/");
+        } else if (
+          this.$router.currentRoute.name === "notFound" ||
+          !this.$router.currentRoute.name
+        ) {
+          this.$router.push("/realDB");
+        }
       }
     },
     playMusicOrNot() {

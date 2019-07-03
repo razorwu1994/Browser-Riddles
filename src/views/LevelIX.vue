@@ -3,7 +3,7 @@
   <div>
     <div
       ref="hijack"
-      :style="`font-size:${count*4+28}px; font-weight:bold`"
+      :style="`font-size:${count%2*20+28}px; font-weight:bold`"
     >Hi I am jack, free me!!!</div>
     <div class="general">
       <h1>General Rule:</h1>
@@ -17,12 +17,11 @@
           <h2>SPOILERS!!! HINTS</h2>
         </button>
       </div>
-      <div v-if="count>=1" class="hint">What are you looking for</div>
-      <div v-if="count>=2" class="hint">Is this real</div>
-      <div v-if="count>=3" class="hint">See you soon</div>
-      <div v-if="count>=5" class="hint">So close</div>
-      <div v-if="count>=8" class="hint">Here you go</div>
-      <div v-if="count>=13" class="hint">/giveBackMyGeneral</div>
+      <div v-if="count>=3" class="hint">What are you looking for</div>
+      <div v-if="count>=5" class="hint">See you soon</div>
+      <div v-if="count>=8" class="hint">So close</div>
+      <div v-if="count>=13" class="hint">Here you go</div>
+      <div v-if="count>=21" class="hint">/giveBackMyGeneral</div>
     </div>
   </div>
 </template>
@@ -39,7 +38,7 @@ export default {
   methods: {
     clickCount() {
       this.count++;
-      if (this.count >= 14) {
+      if (this.count >= 22) {
         this.count = 0;
       }
     }
