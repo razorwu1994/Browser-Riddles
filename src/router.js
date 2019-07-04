@@ -11,6 +11,7 @@ import LevelVIII from "./views/LevelVIII.vue";
 import LevelIX from "./views/LevelIX.vue";
 import Solar from "./views/Solar.vue";
 import Ceiling from "./views/Ceiling.vue";
+import LevelX from "./views/LevelX.vue";
 
 Vue.use(Router);
 
@@ -44,6 +45,8 @@ export default new Router({
     { path: "/florida", name: "LevelVIII", component: LevelVIII },
     { path: "/polydactylCat", redirect: "/bamboozle" },
     { path: "/bamboozle", name: "LevelIX", component: LevelIX },
+    { path: "/giveBackMyGeneral", name: "LevelX", component: LevelX },
+
     { path: "/new", name: "Solar", component: Solar },
     {
       path: "/aintnowayout",
