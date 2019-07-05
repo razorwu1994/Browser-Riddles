@@ -1,6 +1,9 @@
 <template>
   <div class="general">
     <h1>General Rule:</h1>
+    <button @click="goTodo()">
+      <h2>TODO LIST</h2>
+    </button>
     <h2>
       <p>Welcome to Browser Riddles</p>
       <p>To step forward, all you need is to find a keyword from current level and replace it with the current word after last '/'</p>
@@ -30,7 +33,11 @@ const HINTS = {
   "/avacado":
     "Avacado is just a typo, sorry about that. Try to focus on what is really broken",
   "/florida":
-    "What are the few things come to your mind when talk about florida, sunshine, disney world, Ernest Hemingway? "
+    "What are the few things come to your mind when talk about florida, sunshine, disney world, Ernest Hemingway? ",
+  "/bamboozle":
+    "What needs to be freed? And what could be possibly tricky if you've seen it a lot of times",
+  "/giveBackMyGeneral":
+    "Why would the silly developer provide this source code here and can you find a place to use it?"
 };
 export default {
   data: function() {
@@ -46,6 +53,9 @@ export default {
     },
     getHintsStatus() {
       return this.hintsOn;
+    },
+    goTodo() {
+      this.$router.push("/todo");
     }
   }
 };

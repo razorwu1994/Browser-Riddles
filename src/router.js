@@ -9,7 +9,6 @@ import LevelVI from "./views/LevelVI.vue";
 import LevelVII from "./views/LevelVII.vue";
 import LevelVIII from "./views/LevelVIII.vue";
 import LevelIX from "./views/LevelIX.vue";
-import Solar from "./views/Solar.vue";
 import Ceiling from "./views/Ceiling.vue";
 import LevelX from "./views/LevelX.vue";
 
@@ -47,7 +46,7 @@ export default new Router({
     { path: "/bamboozle", name: "LevelIX", component: LevelIX },
     { path: "/giveBackMyGeneral", name: "LevelX", component: LevelX },
 
-    { path: "/new", name: "Solar", component: Solar },
+    // { path: "/new", name: "Solar", component: Solar },
     {
       path: "/aintnowayout",
       name: "nowayout",
@@ -65,6 +64,15 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/DeadEnd.vue")
+    },
+    {
+      path: "/todo",
+      name: "Todolist",
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/ToDo.vue")
     }
   ]
 });
