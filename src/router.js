@@ -12,7 +12,7 @@ import LevelIX from "./views/LevelIX.vue";
 import Ceiling from "./views/Ceiling.vue";
 import LevelX from "./views/LevelX.vue";
 
-if (!window.Router) Vue.use(Router);
+Vue.use(Router);
 
 export default new Router({
   mode: "hash",
