@@ -110,7 +110,7 @@ export default {
         `const charDictionary = JSON.parse('{"a":1,"b":2,"c":3,"d":4,"e":5,"f":6,"g":7,"h":8,"i":9,"j":10,"k":11,"l":12,"m":13,"n":14,"o":15,"p":16,"q":17,"r":18,"s":19,"t":20,"u":21,"v":22,"w":23,"x":24,"y":25,"z":26}')`,
         "const finalDecipher =(key)=>{const k = `${key}` ; return Object.keys(charDictionary)[getKey(k)-1]}",
         "let fin=[0,1,2,3].map(idx=>$$('.cipher'+'-'+idx).map(node=>finalDecipher(node.innerText))).flat().join('');",
-        "$('#fin').innerText = fin.split('go').join('go/')"
+        "$('#fin').innerText = fin.split('go').join('go /')"
       ],
       secretKey: secretKey,
       showKey: false
@@ -120,7 +120,12 @@ export default {
     toggleKey: function() {
       this.showKey = !this.showKey;
     }
-  }
+  },
+    mounted: function() {
+    let realOne = document.getElementById("general");
+    realOne.setAttribute("style", "display:''");
+    //good bye real one this time
+  },
 };
 </script>
 <style scoped>

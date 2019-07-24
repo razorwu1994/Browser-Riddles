@@ -21,7 +21,7 @@
       </p>
     </h1>
     <div v-if="this.key">
-      <h2 class="tada">If you completed every level in this session, Go To /x87|6.5 please :)</h2>
+      <h2 class="tada">If you completed every level in this session, Go To /masbarcode please :)</h2>
     </div>
   </div>
 </template>

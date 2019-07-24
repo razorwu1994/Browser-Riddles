@@ -2,8 +2,12 @@
 <template>
   <div>
     <broken>
-      <JAY src="https://www.dropbox.com/s/6u8pgtpenw0bd8x/song.mp3?dl=0" />
-      <PACK Just say it out loudly and proudly></PACK>
+      <audio autoplay loop preload>
+        <source src="https://www.dropbox.com/s/6u8pgtpenw0bd8x/song.mp3?dl=0" />
+        <INTO />
+        <JAY />
+        <PACK Just say it out loudly and proudly></PACK>
+      </audio>
     </broken>
     <span class="delightful">
       Here you are, congrats on making this way, enjoy this little bonus music track. From now on, you can directly go to

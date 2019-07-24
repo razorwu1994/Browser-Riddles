@@ -5,7 +5,7 @@
       ref="hijack"
       :style="`font-size:${count%2*20+28}px; font-weight:bold`"
     >Hi I am jack, free me!!!</div>
-    <div class="general">
+    <div class="fake">
       <h1>General Rule:</h1>
       <h2>
         <p>Welcome to Browser Riddles</p>
@@ -13,18 +13,17 @@
       </h2>
       <h3>Some levels may contain audio/video file, so please make sure lower down your volume a bit to avoid any unpleasant experience :)</h3>
       <div class="hintWrapper">
-        <button @click="clickCount()" class="hintBtn">
+        <button @click="clickCount()" class="hintBtn" disabled>
           <h2>HINTS</h2>
-        </button>
-        <button @click="clickCount()" class="coreBtn">
-          <h2>CORE</h2>
         </button>
       </div>
       <div v-if="count>=3" class="hint">What are you looking for</div>
       <div v-if="count>=5" class="hint">See you soon</div>
       <div v-if="count>=8" class="hint">So close</div>
       <div v-if="count>=13" class="hint">Here you go</div>
-      <div v-if="count>=21" class="hint">/giveBackMyGeneral</div>
+      <div v-if="count>=21" class="hint">
+        <button @click="redirectNextLevel" class="hintBtn">NEXT LEVEL</button>
+      </div>
     </div>
   </div>
 </template>
@@ -35,7 +34,7 @@ export default {
   },
   mounted: function() {
     let realOne = document.getElementById("general");
-    realOne.remove();
+    realOne.setAttribute("style", "display:none");
     //good bye real one this time
   },
   methods: {
@@ -44,13 +43,16 @@ export default {
       if (this.count >= 22) {
         this.count = 0;
       }
+    },
+    redirectNextLevel() {
+      this.$router.push("/giveBackMyGeneral");
     }
   }
 };
 </script>
 
 <style scoped>
-.general {
+.fake {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: rosybrown;
   position: absolute;
@@ -61,6 +63,7 @@ export default {
   margin: 10px;
   border-radius: 4px;
   border: 2px dashed rosybrown;
+  z-index: 2;
 }
 .hint {
   font-size: 35px;
@@ -97,6 +100,6 @@ button:hover {
 .hintWrapper {
   text-align: center;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 100%;
 }
 </style>
