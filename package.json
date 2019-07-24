@@ -1,8 +1,6 @@
 {
     "name": "riddles",
-    "author": {
-        "name": "Ruicheng Wu"
-    },
+    "author": { "name": "Ruicheng Wu" },
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -27,8 +25,7 @@
         "babel-eslint": "^10.0.1",
         "eslint": "^5.16.0",
         "eslint-plugin-vue": "^5.0.0",
-        "vue-template-compiler": "^2.6.10",
-        "webpack-cdn-plugin": "^3.1.4"
+        "vue-template-compiler": "^2.6.10"
     },
     "eslintConfig": {
         "root": true,

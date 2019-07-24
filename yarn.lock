@@ -6873,11 +6873,6 @@ webpack-bundle-analyzer@^3.3.0:
     opener "^1.5.1"
     ws "^6.0.0"
 
-webpack-cdn-plugin@^3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/webpack-cdn-plugin/-/webpack-cdn-plugin-3.1.4.tgz#8db8aabcf4c2ddb59a656b8198148cc5de2159f8"
-  integrity sha512-J88WEKc0e0rqSNNsLKk7mOVlVMviTCdew70CJVAz6vEzdUDx8FDBnuWmMxkOJrATCF1AgbrRskhTMI2CLOo45g==
-
 webpack-chain@^4.11.0:
   version "4.12.1"
   resolved "https://registry.yarnpkg.com/webpack-chain/-/webpack-chain-4.12.1.tgz#6c8439bbb2ab550952d60e1ea9319141906c02a6"

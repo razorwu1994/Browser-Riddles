@@ -1,9 +1,9 @@
 <template>
   <div class="general">
     <h1>General Rule:</h1>
-    <!-- <button @click="goTodo()">
+    <button @click="goTodo()">
       <h2>TODO LIST</h2>
-    </button>-->
+    </button>
     <h2>
       <p>Welcome to Browser Riddles</p>
       <p>To step forward, all you need is to find a keyword from current level and replace it with the current word after last '/'</p>
@@ -11,7 +11,7 @@
     <h3>Some levels may contain audio/video file, so please make sure lower down your volume a bit to avoid any unpleasant experience :)</h3>
     <div class="spoilerWrapper">
       <button @click="toggleHint()" class="spoilerBtn">
-        <h2>HINTS</h2>
+        <h2>SPOILERS!!! HINTS</h2>
       </button>
     </div>
     <span v-if="getHintsStatus()" class="hint">{{renderHint()}}</span>
