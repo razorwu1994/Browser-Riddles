@@ -2,19 +2,20 @@
   <div>
     <div class="answer grid">
       <div v-for="(row,i) in rowMessage" :key="`ans-${i}-col`">
-        <div v-for="(item,j) in row" :key="`ans-${j}-item`">
+        <div v-for="(item,j) in row" :key="`ans-${j}-item`" :class="`cipher-${j}`">
           <h2>{{item}}</h2>
         </div>
       </div>
     </div>
     <div class="way">
       <p class="code">
-        <button @click="toggleKey()">
+        <button @click="toggleKey()" id="gift" :gift="secretKey">
           <h1>{{`${!showKey?'Your Gift':secretKey}`}}</h1>
         </button>
       </p>
       <p v-for="(row,i) in codeMessage" :key="`way-${i}-col`" class="code">{{row}}</p>
     </div>
+    <div id="fin" />
   </div>
 </template>
 <script>
@@ -104,12 +105,12 @@ export default {
     return {
       rowMessage: rowMessage,
       codeMessage: [
-        `const gift = Your_GIFT`,
-        "const getKey=(data)=>{",
-        "return (parseInt(data,2)-gift)/8}",
+        `const gift = $("#gift").getAttribute('gift')`,
+        "const getKey=(data)=>{return (parseInt(data,2)-gift)/8}",
         `const charDictionary = JSON.parse('{"a":1,"b":2,"c":3,"d":4,"e":5,"f":6,"g":7,"h":8,"i":9,"j":10,"k":11,"l":12,"m":13,"n":14,"o":15,"p":16,"q":17,"r":18,"s":19,"t":20,"u":21,"v":22,"w":23,"x":24,"y":25,"z":26}')`,
         "const finalDecipher =(key)=>{const k = `${key}` ; return Object.keys(charDictionary)[getKey(k)-1]}",
-        "finalDecipher(number_on_the_page_one_by_one)"
+        "let fin=[0,1,2,3].map(idx=>$$('.cipher'+'-'+idx).map(node=>finalDecipher(node.innerText))).flat().join('');",
+        "$('#fin').innerText = fin.split('go').join('go/')"
       ],
       secretKey: secretKey,
       showKey: false
@@ -139,5 +140,25 @@ export default {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   word-break: break-word;
+}
+@-webkit-keyframes flashy {
+  0% {
+    color: gold;
+    opacity: 1;
+  }
+  22% {
+    color: rosybrown;
+  }
+  77% {
+    color: royalblue;
+  }
+  100% {
+    color: #42b983;
+  }
+}
+#fin {
+  animation: flashy 1200ms ease-in-out 0s infinite;
+  font-size: 50px;
+  text-align: left;
 }
 </style>

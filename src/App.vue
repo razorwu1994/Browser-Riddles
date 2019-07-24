@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     verifyRefresh() {
-      if (process.env.NODE === "prod") {
+      if (process.env.NODE === "production") {
         if (sessionStorage.getItem("RIDDLES_LEVEL_VII_DRAGONCAT") == 1) {
           this.$router.push("/avacado");
         }

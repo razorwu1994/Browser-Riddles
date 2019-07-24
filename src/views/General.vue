@@ -55,15 +55,16 @@ const CORES = {
     "This part should be relatively easy if you find elements with 'lookatme' class",
   "/aintnowayout":
     "What is persistent in browser(even if you closed this tab and reopen it, like shopping in Amazon), have you heard about session/cookies? Try to checkout application tab in chrome and find a special value pair in localstorage(this level using this concept)",
-  "/x87|6.5": "Wow, a barcode, can CSS help instead of bending your neck?",
+  "/x87|6.5":
+    "Not a real barcode, but do you know you can perform some 3D image transformations with live CSS editing in the browser?",
   "/avacado":
-    "Avacado is just a typo, sorry about that. Try to focus on what is really broken",
+    "Have you found JAYPACK sound like JPEG? Have you found the broken div yet and what needs to be fixed? The extension of a file isn't always trusty, so open file carefully from a unknown resource because you may be taking risk of turning on a malware script",
   "/florida":
-    "What are the few things come to your mind when talk about florida, sunshine, disney world, Ernest Hemingway? ",
+    "Browser can detect mouse/keyboard event, this level is more like a riddle than knowledge test, there is Key West down in Florida, but in geography location, it is considering as the southern most of USA (at least East Coast from what i know, lol),so try to move your mouse to southern most of this page and 'stay' for a few seconds.",
   "/bamboozle":
-    "What needs to be freed? And what could be possibly tricky if you've seen it a lot of times",
+    "Disableing buttons in web development is more a visual cue than acutally blocking on something if the developer implements the clicking event hanlder properly, so remember you can always enable a disabled button with live CSS editting. In some out-dated web sites, web page elements may be replaced with a faked malicious elements for certain purpose.",
   "/giveBackMyGeneral":
-    "Why would the silly developer provide this source code here and can you find a place to use it?"
+    "Do you know you can actually write mini code/program in browser console tab and use JQuery($ symbol) to speed up the elements selecting process"
 };
 export default {
   data: function() {
