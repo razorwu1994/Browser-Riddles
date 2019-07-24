@@ -12,9 +12,12 @@
         <p>To step forward, all you need is to find a keyword from current level and replace it with the current word after last '/'</p>
       </h2>
       <h3>Some levels may contain audio/video file, so please make sure lower down your volume a bit to avoid any unpleasant experience :)</h3>
-      <div class="spoilerWrapper">
-        <button @click="clickCount()" class="spoilerBtn" disabled>
-          <h2>SPOILERS!!! HINTS</h2>
+      <div class="hintWrapper">
+        <button @click="clickCount()" class="hintBtn">
+          <h2>HINTS</h2>
+        </button>
+        <button @click="clickCount()" class="coreBtn">
+          <h2>CORE</h2>
         </button>
       </div>
       <div v-if="count>=3" class="hint">What are you looking for</div>
@@ -74,16 +77,26 @@ export default {
   color: gold;
 }
 
-.spoilerBtn {
-  background: rgba(234, 94, 117, 0.9);
+button {
+  margin: auto;
   margin-bottom: 10px;
+  padding: 5px;
+  width: 80%;
 }
-.spoilerBtn:hover {
-  background: rgb(234, 94, 117);
+button:hover {
   transform: scale(1.1);
   transition: all 0.5s;
 }
-.spoilerWrapper {
+.coreBtn {
+  background: rgba(234, 94, 117, 0.9);
+}
+.hintBtn {
+  background: #42b983;
+}
+
+.hintWrapper {
   text-align: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 </style>
