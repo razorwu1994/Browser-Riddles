@@ -2,8 +2,8 @@
   <div class="end">
     <div>
       <div v-if="sync !== async" class="descriptive">
-        :( Why sometimes we are inconsistent !
-        <strong>(sort of)</strong>
+        :( Why am I always late than
+        <strong>the bottom 'guy'</strong>
       </div>
       <span>{{async}}</span>
     </div>

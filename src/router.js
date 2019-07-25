@@ -12,6 +12,10 @@ import LevelIX from "./views/LevelIX.vue";
 import Ceiling from "./views/Ceiling.vue";
 import LevelX from "./views/LevelX.vue";
 import Intro from "./views/Intro.vue";
+import Morse from "./views/todo/Morse.vue";
+import Loader from "./views/todo/Loader.vue";
+import SVGS from "./views/todo/SVGS.vue";
+import Solar from "./views/todo/Solar.vue";
 
 Vue.use(Router);
 
@@ -19,6 +23,26 @@ export default new Router({
   mode: "hash",
   base: "/Browser-Riddles/",
   routes: [
+    {
+      path: "/morse-dev",
+      name: "Morse",
+      component: Morse
+    },
+    {
+      path: "/svgs-dev",
+      name: "SVGS",
+      component: SVGS
+    },
+    {
+      path: "/loader-dev",
+      name: "Loader",
+      component: Loader
+    },
+    {
+      path: "/solar-dev",
+      name: "Solar",
+      component: Solar
+    },
     {
       path: "/",
       redirect: "/intro"

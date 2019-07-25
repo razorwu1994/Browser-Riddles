@@ -51,7 +51,7 @@ export default {
       ctx.lineWidth = 2;
       ctx.save();
 
-      ctx.translate(500, 500);
+      ctx.translate(400, 400);
 
       ctx.globalCompositeOperation = "destination-over";
       // create a triangle and parallelogram object
@@ -111,7 +111,7 @@ export default {
       draw(triangle);
 
       ctx.beginPath();
-      ctx.arc(500, 500, 300, 0, Math.PI * 2, true); // Outer circle
+      ctx.arc(400, 400, 300, 0, Math.PI * 2, true); // Outer circle
       ctx.stroke();
       ctx.restore();
       ctx.save();
