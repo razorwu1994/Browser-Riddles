@@ -2,10 +2,10 @@
 <template>
   <div>
     <div>
-      <h1>X 87 | 6.5</h1>
+      <h1>T : RX 87 | S 6.5</h1>
       <div class="barcode">
-        <img src="../assets/asdf.png">
-        <img src="../assets/zxcv.png">
+        <img src="../assets/asdf.png" />
+        <img src="../assets/zxcv.png" />
       </div>
     </div>
   </div>
@@ -38,5 +38,6 @@ export default {
   border-radius: 10px;
   border: 4px dashed black;
   padding: 10px;
+  transform: rotateX(0deg) scale(1);
 }
 </style>
