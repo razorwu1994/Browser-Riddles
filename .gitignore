@@ -22,3 +22,4 @@ yarn-error.log*
 *.sw?
 .env
 dist/index.html
+dist/index.html

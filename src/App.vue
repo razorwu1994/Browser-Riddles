@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view />
-    <General id="general" />
+    <General id="general" v-if="$router.currentRoute.name!=='Intro'" />
     <audio autoplay loop preload v-if="playMusic">
       <source src="./assets/path.mp3" />
     </audio>

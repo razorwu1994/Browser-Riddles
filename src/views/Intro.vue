@@ -3,7 +3,7 @@
     <h1>Welcome to Browser Riddles</h1>
     <p>A nonstop journey of learning web development</p>
     <p>Bon voyage!</p>
-    <button @click="function(){$router.push('/competitor')}" class="start">Start</button>
+    <button @click="function(){$router.replace('/competitor')}" class="start">Start</button>
   </div>
 </template>
 <script>
