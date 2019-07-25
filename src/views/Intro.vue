@@ -1,7 +1,7 @@
 <template>
   <div class="intro">
     <h1>Welcome to Browser Riddles</h1>
-    <p>A nonstop journey of learning web development</p>
+    <p>- A nonstop journey of learning web development</p>
     <button
       @click="function(){$router.replace('/competitor')}"
       class="start"
@@ -33,7 +33,7 @@ export default {
       } else if ((end - start) / 1000 > 2) {
         setTimeout(() => {
           this.displayAnimation = true;
-        }, 15000);
+        }, 5000);
       }
     }, 500);
   },
@@ -42,11 +42,7 @@ export default {
       let [h, w] = [window.innerHeight, window.innerWidth];
       let mouseX = parseInt(evt.clientX, 10);
       let mouseY = parseInt(evt.clientY, 10);
-      if (
-        mouseY > (h * 9) / 10 &&
-        mouseX < w / 10 + h / 10 &&
-        mouseX > w / 10 - h / 10
-      ) {
+      if (mouseY > (h * 9) / 10 && mouseX < w / 10 + h / 10) {
         this.open = true;
       } else {
         this.open = false;
@@ -73,6 +69,8 @@ p {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 30px;
   font-weight: bold;
+  font-style: italic;
+  text-align: right;
 }
 </style>
 
