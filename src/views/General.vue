@@ -1,11 +1,11 @@
 <template>
   <div class="general">
-    <h1>General Rule:</h1>
+    <h1>Read Carefully Below Please!!!</h1>
     <!-- <button @click="goTodo()">
       <h2>TODO LIST</h2>
     </button>-->
     <h2>
-      <p>Welcome to Browser Riddles</p>
+      <p>The word after '/' is part of the level</p>
       <p>To step forward, all you need is to find a keyword from current level and replace it with the current word after last '/'</p>
     </h2>
     <h3>Some levels may contain audio/video file, so please make sure lower down your volume a bit to avoid any unpleasant experience :)</h3>
@@ -150,5 +150,9 @@ button:hover {
 .hintWrapper {
   text-align: center;
   display: grid;
+}
+
+h2 > p {
+  font-style: italic;
 }
 </style>
