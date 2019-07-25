@@ -1,6 +1,6 @@
 
 <template>
-  <div class="flashy">Congrats!!!, you've reached the top of this tower</div>
+  <div class="flashy">To Be Continue</div>
 </template>
 <script>
 export default {
@@ -33,5 +33,7 @@ export default {
   animation: flashy 1200ms ease-in-out 0s infinite;
   font-size: 50px;
   margin: 40vh auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 </style>
