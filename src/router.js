@@ -11,6 +11,7 @@ import LevelVIII from "./views/LevelVIII.vue";
 import LevelIX from "./views/LevelIX.vue";
 import Ceiling from "./views/Ceiling.vue";
 import LevelX from "./views/LevelX.vue";
+import Intro from "./views/Intro.vue";
 
 Vue.use(Router);
 
@@ -20,7 +21,12 @@ export default new Router({
   routes: [
     {
       path: "/",
-      redirect: "/competitor"
+      redirect: "/intro"
+    },
+    {
+      path: "/intro",
+      name: "Intro",
+      component: Intro
     },
     {
       path: "/competitor",
