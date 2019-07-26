@@ -1,7 +1,7 @@
 <template>
   <div class="intro">
     <h1>Welcome to Browser Riddles</h1>
-    <p>- A nonstop journey of learning web development</p>
+    <p ref="des">- A nonstop journey of learning web development</p>
     <button
       @click="function(){$router.replace('/competitor')}"
       class="start"
@@ -31,9 +31,10 @@ export default {
       if (!this.open) {
         start = end;
       } else if ((end - start) / 1000 > 2) {
+        this.$refs.des.innerHTML = `- A nonstop journey of learning web development.`;
         setTimeout(() => {
           this.displayAnimation = true;
-        }, 5000);
+        }, 1500);
       }
     }, 500);
   },
