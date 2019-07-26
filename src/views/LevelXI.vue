@@ -1,11 +1,14 @@
 <template>
   <div>
     <div ref="board">
+      <h2>Why won't you give</h2>
       <h1>Me Myself & I</h1>
+      <h2>One try</h2>
     </div>
     <div class="canvasWrapper">
       <canvas id="canvas" width="500" height="200" style="border:2px solid black" ref="canvas"></canvas>
     </div>
+    <div v-if="computedDrawingV">You reached the /ceiling</div>
   </div>
 </template>
 <script>
@@ -15,7 +18,9 @@ export default {
       mousePressed: false,
       lastX: 0,
       lastY: 0,
-      ctx: {}
+      ctx: {},
+      drawingV: false,
+      drawingArray: []
     };
   },
 
@@ -47,8 +52,24 @@ export default {
     this.$refs.board.addEventListener("mousedown", this.clearArea);
   },
   methods: {
+    getAngle: function(ex, ey, cx, cy) {
+      let dy = ey - cy,
+        dx = ex - cx;
+      let theta = Math.atan2(dy, dx);
+      theta *= 180 / Math.PI; // rads to degs
+      return theta;
+    },
     draw: function(x, y, isDown) {
       if (isDown) {
+        let temp = [...this.drawingArray];
+        let drawingAngle = this.getAngle(this.lastX, this.lastY, x, y);
+
+        if (Math.abs(drawingAngle) <= 150 && Math.abs(drawingAngle) >= 100) {
+          temp.push(true);
+        } else {
+          temp.push(false);
+        }
+        this.drawingArray = temp;
         this.ctx.beginPath();
         this.ctx.strokeStyle = "black";
         this.ctx.lineWidth = 5;
@@ -65,6 +86,18 @@ export default {
       // Use the identity matrix while clearing the canvas
       this.ctx.setTransform(1, 0, 0, 1, 0, 0);
       this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
+      this.drawingArray = [];
+    }
+  },
+  computed: {
+    computedDrawingV: function() {
+      let falseCount = 0,
+        trueCount = 0;
+      this.drawingArray.forEach(v => {
+        if (!v) falseCount++;
+        else trueCount++;
+      });
+      return trueCount - falseCount > 5;
     }
   }
 };

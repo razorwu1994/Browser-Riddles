@@ -34,7 +34,7 @@ export default {
       } else if ((end - start) / 1000 > 2) {
         this.displayKey = true;
         if (!this.answer) {
-          this.answer = "Surpise mothe...";
+          this.answer = "Surpise mot...";
         }
         this.$refs.keywest.setAttribute(
           "style",
