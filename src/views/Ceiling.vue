@@ -36,11 +36,12 @@ export default {
 
 .flashy {
   animation: flashy 1500ms ease-in-out 0s infinite,
-    moveUp 10000ms ease-in-out 0s infinite;
+    moveUp 10000ms ease-in-out 0s infinite, shakeShack 1500ms linear 2s infinite;
   font-size: 50px;
   margin: 60vh auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  position: relative;
 }
 
 @-webkit-keyframes moveUp {
