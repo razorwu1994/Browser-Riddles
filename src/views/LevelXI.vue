@@ -8,7 +8,9 @@
     <div class="canvasWrapper">
       <canvas id="canvas" width="500" height="200" style="border:2px solid black" ref="canvas"></canvas>
     </div>
-    <div v-if="computedDrawingV">You reached the /ceiling</div>
+    <div v-if="computedDrawingV">
+      <h2>You reached the /ceiling</h2>
+    </div>
   </div>
 </template>
 <script>

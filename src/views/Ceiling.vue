@@ -18,22 +18,6 @@ export default {
 </script>
 
 <style scoped>
-@-webkit-keyframes flashy {
-  0% {
-    color: gold;
-    opacity: 1;
-  }
-  22% {
-    color: rosybrown;
-  }
-  77% {
-    color: royalblue;
-  }
-  100% {
-    color: #42b983;
-  }
-}
-
 .flashy {
   animation: flashy 1500ms ease-in-out 0s infinite,
     moveUp 10000ms ease-in-out 0s infinite, shakeShack 1500ms linear 2s infinite;

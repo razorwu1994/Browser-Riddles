@@ -114,7 +114,22 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
+@-webkit-keyframes flashy {
+  0% {
+    color: gold;
+    opacity: 1;
+  }
+  22% {
+    color: rosybrown;
+  }
+  77% {
+    color: royalblue;
+  }
+  100% {
+    color: #42b983;
+  }
+}
 .general {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: rosybrown;

@@ -121,11 +121,11 @@ export default {
       this.showKey = !this.showKey;
     }
   },
-    mounted: function() {
+  mounted: function() {
     let realOne = document.getElementById("general");
     realOne.setAttribute("style", "display:''");
     //good bye real one this time
-  },
+  }
 };
 </script>
 <style scoped>
@@ -146,21 +146,7 @@ export default {
     "Lucida Sans", Arial, sans-serif;
   word-break: break-word;
 }
-@-webkit-keyframes flashy {
-  0% {
-    color: gold;
-    opacity: 1;
-  }
-  22% {
-    color: rosybrown;
-  }
-  77% {
-    color: royalblue;
-  }
-  100% {
-    color: #42b983;
-  }
-}
+
 #fin {
   animation: flashy 1200ms ease-in-out 0s infinite;
   font-size: 50px;
