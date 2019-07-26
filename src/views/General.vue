@@ -42,7 +42,8 @@ const HINTS = {
   "/bamboozle":
     "What needs to be freed? And what could be possibly tricky if you've seen it a lot of times",
   "/welcomeToBWorld":
-    "Why would the silly developer provide this source code here and can you find a place to use it?"
+    "Why would the silly developer provide this source code here and can you find a place to use it?",
+  "/spiderman": "Who am I, dark spiderman or you can call me?"
 };
 const CORES = {
   "/competitor": `Do you know you can right click on an image and "search google for image", find out what other frameworks folks may search for.`,
@@ -65,7 +66,9 @@ const CORES = {
   "/bamboozle":
     "Disableing buttons in web development is more a visual cue than acutally blocking on something if the developer implements the clicking event hanlder properly, so remember you can always enable a disabled button with live CSS editting. In some out-dated web sites, web page elements may be replaced with a faked malicious elements for certain purpose.",
   "/welcomeToBWorld":
-    "Do you know you can actually write mini code/program in browser console tab and use JQuery($ symbol) to speed up the elements selecting process."
+    "Do you know you can actually write mini code/program in browser console tab and use JQuery($ symbol) to speed up the elements selecting process.",
+  "/spiderman":
+    "Dark version of spiderman is its villain, vendom, and this program itself is made of ? The web page logo and first level should tell you the key"
 };
 export default {
   mounted() {
