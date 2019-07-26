@@ -1,6 +1,8 @@
 <template>
-  <div class="end">
-    <h1>Me Myself & I</h1>
+  <div>
+    <div ref="board">
+      <h1>Me Myself & I</h1>
+    </div>
     <div class="canvasWrapper">
       <canvas id="canvas" width="500" height="200" style="border:2px solid black" ref="canvas"></canvas>
     </div>
@@ -41,12 +43,14 @@ export default {
     canvas.addEventListener("mouseleave", e => {
       this.mousePressed = false;
     });
+
+    this.$refs.board.addEventListener("mousedown", this.clearArea);
   },
   methods: {
     draw: function(x, y, isDown) {
       if (isDown) {
         this.ctx.beginPath();
-        this.ctx.strokeStyle = "red";
+        this.ctx.strokeStyle = "black";
         this.ctx.lineWidth = 5;
         this.ctx.lineJoin = "round";
         this.ctx.moveTo(this.lastX, this.lastY);
