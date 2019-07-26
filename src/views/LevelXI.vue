@@ -34,11 +34,11 @@ export default {
       }
     });
 
-    canvas.addEventListener("mouseup", function(e) {
+    canvas.addEventListener("mouseup", e => {
       this.mousePressed = false;
     });
 
-    canvas.addEventListener("mouseleave", function(e) {
+    canvas.addEventListener("mouseleave", e => {
       this.mousePressed = false;
     });
   },
