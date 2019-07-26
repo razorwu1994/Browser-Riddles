@@ -1,6 +1,11 @@
 
 <template>
-  <div class="flashy">To Be Continue</div>
+  <div>
+    <div class="flashy">To Be Continue</div>
+    <div class="meow">
+      <img src="../assets/nice.jpg" />
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -30,10 +35,40 @@ export default {
 }
 
 .flashy {
-  animation: flashy 1200ms ease-in-out 0s infinite;
+  animation: flashy 1500ms ease-in-out 0s infinite,
+    moveUp 10000ms ease-in-out 0s infinite;
   font-size: 50px;
-  margin: 40vh auto;
+  margin: 60vh auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@-webkit-keyframes moveUp {
+  0% {
+    margin: 60vh auto;
+  }
+  50% {
+    margin: 0vh auto;
+  }
+  100% {
+    margin: 60vh auto;
+  }
+}
+
+.meow {
+  animation: shakeShack 1500ms ease-in-out 0s infinite;
+  position: relative;
+}
+
+@-webkit-keyframes shakeShack {
+  0% {
+    left: 0px;
+  }
+  50% {
+    left: 10vw;
+  }
+  100% {
+    left: 0px;
+  }
 }
 </style>
