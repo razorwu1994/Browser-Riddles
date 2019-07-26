@@ -9,7 +9,7 @@
       <canvas id="canvas" width="500" height="200" style="border:2px solid black" ref="canvas"></canvas>
     </div>
     <div v-if="computedDrawingV">
-      <h2>You reached the /ceiling</h2>
+      <h2>You've reached the /ceiling</h2>
     </div>
   </div>
 </template>
@@ -65,10 +65,15 @@ export default {
       if (isDown) {
         let temp = [...this.drawingArray];
         let drawingAngle = this.getAngle(this.lastX, this.lastY, x, y);
-
-        if (drawingAngle <= 150 && drawingAngle >= 100) {
+        if (
+          (drawingAngle <= 150 && drawingAngle >= 100) ||
+          (drawingAngle <= 50 && drawingAngle >= 40)
+        ) {
           temp.push({ positive: true });
-        } else if (drawingAngle <= -100 && drawingAngle >= -150) {
+        } else if (
+          (drawingAngle <= -100 && drawingAngle >= -150) ||
+          (drawingAngle <= -40 && drawingAngle >= -50)
+        ) {
           temp.push({ negative: true });
         } else {
           temp.push(false);
@@ -96,12 +101,20 @@ export default {
   computed: {
     computedDrawingV: function() {
       let negCount = 0,
-        posCount = 0;
+        posCount = 0,
+        falseCount = 0;
       this.drawingArray.forEach(v => {
+        if (!v) {
+          falseCount++;
+          return;
+        }
         if (v.positive) posCount++;
         else if (v.negative) negCount++;
       });
-      return posCount > 1 && negCount > 1;
+      console.log(posCount, negCount, falseCount);
+      return (
+        posCount > 2 && negCount > 2 && negCount + posCount - falseCount > 5
+      );
     }
   }
 };
