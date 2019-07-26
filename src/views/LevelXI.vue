@@ -66,8 +66,10 @@ export default {
         let temp = [...this.drawingArray];
         let drawingAngle = this.getAngle(this.lastX, this.lastY, x, y);
 
-        if (Math.abs(drawingAngle) <= 150 && Math.abs(drawingAngle) >= 100) {
-          temp.push(true);
+        if (drawingAngle <= 150 && drawingAngle >= 100) {
+          temp.push({ positive: true });
+        } else if (drawingAngle <= -100 && drawingAngle >= -150) {
+          temp.push({ negative: true });
         } else {
           temp.push(false);
         }
@@ -93,13 +95,13 @@ export default {
   },
   computed: {
     computedDrawingV: function() {
-      let falseCount = 0,
-        trueCount = 0;
+      let negCount = 0,
+        posCount = 0;
       this.drawingArray.forEach(v => {
-        if (!v) falseCount++;
-        else trueCount++;
+        if (v.positive) posCount++;
+        else if (v.negative) negCount++;
       });
-      return trueCount - falseCount > 5;
+      return posCount > 1 && negCount > 1;
     }
   }
 };
