@@ -16,6 +16,7 @@ import Morse from "./views/todo/Morse.vue";
 import Loader from "./views/todo/Loader.vue";
 import SVGS from "./views/todo/SVGS.vue";
 import Solar from "./views/todo/Solar.vue";
+import LevelXI from "./views/LevelXI.vue";
 
 Vue.use(Router);
 
@@ -81,7 +82,8 @@ export default new Router({
     { path: "/bamboozle", name: "LevelIX", component: LevelIX },
     { path: "/giveBackMyGeneral", redirect: "/welcomeToBWorld" },
     { path: "/welcomeToBWorld", name: "LevelX", component: LevelX },
-    { path: "/spiderman", name: "LevelX", component: Ceiling },
+    { path: "/spiderman", name: "LevelXI", component: LevelXI },
+    { path: "/ceiling", name: "Ceiling", component: Ceiling },
 
     // { path: "/new", name: "Solar", component: Solar },
     {
