@@ -17,6 +17,7 @@ import Loader from "./views/todo/Loader.vue";
 import SVGS from "./views/todo/SVGS.vue";
 import Solar from "./views/todo/Solar.vue";
 import LevelXI from "./views/LevelXI.vue";
+import CyberPunk from "./views/todo/CyberPunk.vue";
 
 Vue.use(Router);
 
@@ -24,6 +25,11 @@ export default new Router({
   mode: "hash",
   base: "/Browser-Riddles/",
   routes: [
+    {
+      path: "/cyber-punk",
+      name: "Cyberpunk",
+      component: CyberPunk
+    },
     {
       path: "/morse-dev",
       name: "Morse",
