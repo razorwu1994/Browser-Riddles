@@ -47,7 +47,7 @@ export default {
     realOne.setAttribute("style", "display:none");
     //good bye real one this time
     setInterval(() => {
-      if (this.x < 2000 && this.x >= 0) {
+      if (this.x < window.innerWidth && this.x >= 0) {
         this.x += this.direction;
       } else {
         this.direction = -1 * this.direction;
