@@ -1,6 +1,8 @@
 {
     "name": "riddles",
-    "author": { "name": "Ruicheng Wu" },
+    "author": {
+        "name": "Ruicheng Wu"
+    },
     "version": "0.1.0",
     "private": true,
     "scripts": {
