@@ -3,8 +3,7 @@
     <h1>Welcome to Browser Riddles</h1>
     <p ref="des">- A nonstop journey of learning web development</p>
     <button
-      @click="
-        function() {
+      @click="function() {
           $router.replace('/competitor');
         }
       "
