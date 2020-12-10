@@ -3,59 +3,64 @@
     <h1>Welcome to Browser Riddles</h1>
     <p ref="des">- A nonstop journey of learning web development</p>
     <button
-      @click="function(){$router.replace('/competitor')}"
+      @click="
+        function() {
+          $router.replace('/competitor');
+        }
+      "
       class="start"
-      v-if="computedDisplayAnimation"
-    >Bon voyage!</button>
+    >
+      Bon voyage!
+    </button>
   </div>
 </template>
 <script>
 export default {
   data: function() {
     return {
-      open: false,
-      displayAnimation: false
+      open: truse,
+      displayAnimation: false,
     };
   },
-  created() {
-    window.addEventListener("mousemove", this.handleMouseMove);
-  },
-  destroyed() {
-    window.removeEventListener("mousemove", this.handleMouseMove);
-  },
-  mounted() {
-    let start = new Date(),
-      end = start;
-    setInterval(() => {
-      end = new Date();
-      if (!this.open) {
-        start = end;
-      } else if ((end - start) / 1000 > 2) {
-        this.$refs.des.innerHTML = `- A nonstop journey of learning web development.`;
-        setTimeout(() => {
-          this.displayAnimation = true;
-        }, 1500);
-      }
-    }, 500);
-  },
+  // created() {
+  //   window.addEventListener("mousemove", this.handleMouseMove);
+  // },
+  // destroyed() {
+  //   window.removeEventListener("mousemove", this.handleMouseMove);
+  // },
+  // mounted() {
+  //   let start = new Date(),
+  //     end = start;
+  //   setInterval(() => {
+  //     end = new Date();
+  //     if (!this.open) {
+  //       start = end;
+  //     } else if ((end - start) / 1000 > 2) {
+  //       this.$refs.des.innerHTML = `- A nonstop journey of learning web development.`;
+  //       setTimeout(() => {
+  //         this.displayAnimation = true;
+  //       }, 1500);
+  //     }
+  //   }, 500);
+  // },
   methods: {
-    handleMouseMove: function(evt, el) {
-      let [h, w] = [window.innerHeight, window.innerWidth];
-      let mouseX = parseInt(evt.clientX, 10);
-      let mouseY = parseInt(evt.clientY, 10);
-      if (mouseY > (h * 9) / 10 && mouseX < w / 10 + h / 10) {
-        this.open = true;
-      } else {
-        this.open = false;
-      }
-      return;
-    }
+    // handleMouseMove: function(evt, el) {
+    //   let [h, w] = [window.innerHeight, window.innerWidth];
+    //   let mouseX = parseInt(evt.clientX, 10);
+    //   let mouseY = parseInt(evt.clientY, 10);
+    //   if (mouseY > (h * 9) / 10 && mouseX < w / 10 + h / 10) {
+    //     this.open = true;
+    //   } else {
+    //     this.open = false;
+    //   }
+    //   return;
+    // }
   },
-  computed: {
-    computedDisplayAnimation() {
-      return this.displayAnimation;
-    }
-  }
+  // computed: {
+  //   computedDisplayAnimation() {
+  //     return this.displayAnimation;
+  //   }
+  // }
 };
 </script>
 
@@ -74,4 +79,3 @@ p {
   text-align: right;
 }
 </style>
-
