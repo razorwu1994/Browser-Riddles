@@ -14,11 +14,11 @@
 <script>
 import { setInterval } from "timers";
 export default {
-  data: function() {
+  data: function () {
     return { captureToggle: false, x: 0, value: 50, direction: 5 };
   },
   methods: {
-    mo: function(evt) {
+    mo: function (evt) {
       if (this.captureToggle) {
         console.log(window.innerWidth);
         let percetage = ((evt.x / window.innerWidth) * 100).toFixed(2);
@@ -27,22 +27,22 @@ export default {
         this.value = percetage;
       }
     },
-    captureOn: function() {
+    captureOn: function () {
       this.captureToggle = true;
     },
-    captureOff: function() {
+    captureOff: function () {
       this.captureToggle = false;
-    }
+    },
   },
   computed: {
-    computedDay: function() {
+    computedDay: function () {
       return window.innerWidth - this.x;
     },
-    computedNight: function() {
+    computedNight: function () {
       return this.x;
-    }
+    },
   },
-  mounted: function() {
+  mounted: function () {
     let realOne = document.getElementById("general");
     realOne.setAttribute("style", "display:none");
     //good bye real one this time
@@ -54,7 +54,7 @@ export default {
         this.x += this.direction;
       }
     }, 10);
-  }
+  },
 };
 </script>
 
@@ -64,7 +64,7 @@ h1 {
 }
 .slider {
   width: 50px;
-  height: 65vh;
+  height: 80vh;
   background: #607d8bb3;
   position: fixed;
   z-index: 99;
@@ -73,6 +73,7 @@ h1 {
   height: 80vh;
   margin: auto;
   z-index: 99;
+  position: fixed;
 }
 #day {
   background-image: url(../../assets/day.png);
