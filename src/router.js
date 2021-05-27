@@ -28,49 +28,49 @@ export default new Router({
     {
       path: "/cyber-punk",
       name: "Cyberpunk",
-      component: CyberPunk
+      component: CyberPunk,
     },
     {
       path: "/morse-dev",
       name: "Morse",
-      component: Morse
+      component: Morse,
     },
     {
       path: "/svgs-dev",
       name: "SVGS",
-      component: SVGS
+      component: SVGS,
     },
     {
       path: "/loader-dev",
       name: "Loader",
-      component: Loader
+      component: Loader,
     },
     {
       path: "/solar-dev",
       name: "Solar",
-      component: Solar
+      component: Solar,
     },
     {
       path: "/",
-      redirect: "/intro"
+      redirect: "/intro",
     },
     {
       path: "/intro",
       name: "Intro",
-      component: Intro
+      component: Intro,
     },
     {
       path: "/competitor",
       name: "LevelI",
-      component: LevelI
+      component: LevelI,
     },
     {
       path: "/react",
-      redirect: "/howManyEllipses"
+      redirect: "/howManyEllipses",
     },
     {
       path: "/angular",
-      redirect: "/howManyEllipses"
+      redirect: "/howManyEllipses",
     },
     { path: "/howManyEllipses", name: "LevelII", component: LevelII },
     { path: "/12", name: "LevelIII", component: LevelIII },
@@ -78,6 +78,7 @@ export default new Router({
     { path: "/async", redirect: "/internet" },
     { path: "/synchronous", redirect: "/internet" },
     { path: "/asynchronous", redirect: "/internet" },
+    { path: "/promise", redirect: "/internet" },
     { path: "/internet", name: "LevelIV", component: LevelIV },
 
     { path: "/realDB", name: "LevelV", component: LevelV },
@@ -99,7 +100,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Lock.vue")
+        import(/* webpackChunkName: "about" */ "./views/Lock.vue"),
     },
     {
       path: "*",
@@ -108,7 +109,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/DeadEnd.vue")
+        import(/* webpackChunkName: "about" */ "./views/DeadEnd.vue"),
     },
     {
       path: "/todo",
@@ -117,7 +118,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/ToDo.vue")
-    }
-  ]
+        import(/* webpackChunkName: "about" */ "./views/ToDo.vue"),
+    },
+  ],
 });

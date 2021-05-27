@@ -4,20 +4,20 @@
       id="bigbrohda"
       class="logo triplets"
       alt="Vue logo"
-      src="https://cdn.worldvectorlogo.com/logos/react.svg"
-    >
+      src="../assets/logo-eclip.png"
+    />
     <img
       id="middlebrohda"
       class="logo triplets"
       alt="Vue logo"
-      src="https://cdn.worldvectorlogo.com/logos/react.svg"
-    >
+      src="../assets/logo-eclip.png"
+    />
     <img
       id="lilbrohda"
       class="logo triplets"
       alt="Vue logo"
-      src="https://cdn.worldvectorlogo.com/logos/react.svg"
-    >
+      src="../assets/logo-eclip.png"
+    />
   </div>
 </template>
 <script>
@@ -28,7 +28,7 @@ export default {
     } else {
       sessionStorage.setItem("RIDDLES_LEVEL_II_CIRCLES", "1");
     }
-  }
+  },
 };
 </script>
 

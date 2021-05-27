@@ -6,10 +6,19 @@
     </button>-->
     <h2>
       <p>The word after '/' is part of the level</p>
-      <p>To step forward, all you need is to find a keyword from current level and replace it with the current word after last '/'</p>
+      <p>
+        To step forward, all you need is to find a keyword from current level
+        and replace it with the current word after last '/'
+      </p>
     </h2>
-    <h3>Some levels may contain audio/video file, so please make sure lower down your volume a bit to avoid any unpleasant experience :)</h3>
-    <div class="hintWrapper" :style="`grid-template:${displaySpoiler?`50% 50%`:`100%`} !important`">
+    <h3>
+      Some levels may contain audio/video file, so please make sure lower down
+      your volume a bit to avoid any unpleasant experience :)
+    </h3>
+    <div
+      class="hintWrapper"
+      :style="`grid-template:${displaySpoiler ? `50% 50%` : `100%`} !important`"
+    >
       <button @click="toggleHint()" class="hintBtn">
         <h2>HINTS</h2>
       </button>
@@ -17,8 +26,10 @@
         <h2>SPOILER</h2>
       </button>
     </div>
-    <span v-if="getHintsStatus()" class="hint">{{renderHint()}}</span>
-    <span v-if="getCoreStatus()&&displaySpoiler" class="hint">{{renderCore()}}</span>
+    <span v-if="getHintsStatus()" class="hint">{{ renderHint() }}</span>
+    <span v-if="getCoreStatus() && displaySpoiler" class="hint">{{
+      renderCore()
+    }}</span>
   </div>
 </template>
 <script>
@@ -43,7 +54,7 @@ const HINTS = {
     "What needs to be freed? And what could be possibly tricky if you've seen it a lot of times",
   "/welcomeToBWorld":
     "Why would the silly developer provide this source code here and can you find a place to use it?",
-  "/spiderman": "Who am I, dark spiderman or you can call me?"
+  "/spiderman": "Who am I, dark spiderman or you can call me?",
 };
 const CORES = {
   "/competitor": `Do you know you can right click on an image and "search google for image", find out what other frameworks folks may search for.`,
@@ -68,7 +79,7 @@ const CORES = {
   "/welcomeToBWorld":
     "Do you know you can actually write mini code/program in browser console tab and use JQuery($ symbol) to speed up the elements selecting process.",
   "/spiderman":
-    "Dark version of spiderman is its villain, vendom, and this program itself is made of ? The web page logo and first level should tell you the key"
+    "Dark version of spiderman is its villain, vendom, and this program itself is made of ? The web page logo and first level should tell you the key",
 };
 export default {
   mounted() {
@@ -82,7 +93,7 @@ export default {
   computed: {
     displaySpoiler() {
       return this.spoilerCount > 60;
-    }
+    },
   },
   methods: {
     renderHint() {
@@ -109,12 +120,12 @@ export default {
     },
     getCoreStatus() {
       return this.coresOn;
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style >
+<style>
 @-webkit-keyframes flashy {
   0% {
     color: gold;
@@ -155,7 +166,7 @@ button {
   width: 80%;
 }
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.01);
   transition: all 0.5s;
 }
 .coreBtn {
