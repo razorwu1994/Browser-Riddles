@@ -43,11 +43,11 @@ export default {
       }
     });
 
-    canvas.addEventListener("mouseup", e => {
+    canvas.addEventListener("mouseup", () => {
       this.mousePressed = false;
     });
 
-    canvas.addEventListener("mouseleave", e => {
+    canvas.addEventListener("mouseleave", () => {
       this.mousePressed = false;
     });
 
@@ -111,7 +111,7 @@ export default {
         if (v.positive) posCount++;
         else if (v.negative) negCount++;
       });
-      console.log(posCount, negCount, falseCount);
+      // console.log(posCount, negCount, falseCount);
       return (
         posCount > 2 && negCount > 2 && negCount + posCount - falseCount > 5
       );
