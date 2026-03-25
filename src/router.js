@@ -22,103 +22,100 @@ import CyberPunk from "./views/todo/CyberPunk.vue";
 Vue.use(Router);
 
 export default new Router({
-  mode: "hash",
-  base: "/Browser-Riddles/",
+  mode: 'hash',
+  base: '/Browser-Riddles/',
   routes: [
     {
-      path: "/cyber-punk",
-      name: "Cyberpunk",
+      path: '/cyber-punk',
+      name: 'Cyberpunk',
       component: CyberPunk,
     },
     {
-      path: "/morse-dev",
-      name: "Morse",
+      path: '/morse-dev',
+      name: 'Morse',
       component: Morse,
     },
     {
-      path: "/svgs-dev",
-      name: "SVGS",
+      path: '/svgs-dev',
+      name: 'SVGS',
       component: SVGS,
     },
     {
-      path: "/loader-dev",
-      name: "Loader",
+      path: '/loader-dev',
+      name: 'Loader',
       component: Loader,
     },
     {
-      path: "/solar-dev",
-      name: "Solar",
+      path: '/solar-dev',
+      name: 'Solar',
       component: Solar,
     },
     {
-      path: "/",
-      redirect: "/intro",
+      path: '/',
+      redirect: '/intro',
     },
     {
-      path: "/intro",
-      name: "Intro",
+      path: '/intro',
+      name: 'Intro',
       component: Intro,
     },
     {
-      path: "/competitor",
-      name: "LevelI",
+      path: '/competitor',
+      name: 'LevelI',
       component: LevelI,
     },
     {
-      path: "/react",
-      redirect: "/howManyEllipses",
+      path: '/react',
+      redirect: '/howManyEllipses',
     },
     {
-      path: "/angular",
-      redirect: "/howManyEllipses",
+      path: '/angular',
+      redirect: '/howManyEllipses',
     },
-    { path: "/howManyEllipses", name: "LevelII", component: LevelII },
-    { path: "/12", name: "LevelIII", component: LevelIII },
-    { path: "/sync", redirect: "/internet" },
-    { path: "/async", redirect: "/internet" },
-    { path: "/synchronous", redirect: "/internet" },
-    { path: "/asynchronous", redirect: "/internet" },
-    { path: "/promise", redirect: "/internet" },
-    { path: "/internet", name: "LevelIV", component: LevelIV },
+    { path: '/howManyEllipses', name: 'LevelII', component: LevelII },
+    { path: '/12', name: 'LevelIII', component: LevelIII },
+    { path: '/sync', redirect: '/internet' },
+    { path: '/async', redirect: '/internet' },
+    { path: '/synchronous', redirect: '/internet' },
+    { path: '/asynchronous', redirect: '/internet' },
+    { path: '/promise', redirect: '/internet' },
+    { path: '/internet', name: 'LevelIV', component: LevelIV },
 
-    { path: "/realDB", name: "LevelV", component: LevelV },
-    { path: "/masbarcode", name: "LevelVI", component: LevelVI },
-    { path: "/avacado", name: "LevelVII", component: LevelVII },
-    { path: "/florida", name: "LevelVIII", component: LevelVIII },
-    { path: "/polydactylCat", redirect: "/bamboozle" },
-    { path: "/bamboozle", name: "LevelIX", component: LevelIX },
-    { path: "/giveBackMyGeneral", redirect: "/welcomeToBWorld" },
-    { path: "/welcomeToBWorld", name: "LevelX", component: LevelX },
-    { path: "/spiderman", name: "LevelXI", component: LevelXI },
-    { path: "/ceiling", name: "Ceiling", component: Ceiling },
+    { path: '/realDB', name: 'LevelV', component: LevelV },
+    { path: '/masbarcode', name: 'LevelVI', component: LevelVI },
+    { path: '/avacado', name: 'LevelVII', component: LevelVII },
+    { path: '/florida', name: 'LevelVIII', component: LevelVIII },
+    { path: '/polydactylCat', redirect: '/bamboozle' },
+    { path: '/bamboozle', name: 'LevelIX', component: LevelIX },
+    { path: '/giveBackMyGeneral', redirect: '/welcomeToBWorld' },
+    { path: '/welcomeToBWorld', name: 'LevelX', component: LevelX },
+    { path: '/spiderman', name: 'LevelXI', component: LevelXI },
+    { path: '/ceiling', name: 'Ceiling', component: Ceiling },
 
-    // { path: "/new", name: "Solar", component: Solar },
+    { path: '/new', name: 'Solar', component: Solar },
     {
-      path: "/aintnowayout",
-      name: "nowayout",
+      path: '/aintnowayout',
+      name: 'nowayout',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Lock.vue"),
+      component: () => import(/* webpackChunkName: "about" */ './views/Lock.vue'),
     },
     {
-      path: "*",
-      name: "deadEnd",
+      path: '*',
+      name: 'deadEnd',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/DeadEnd.vue"),
+      component: () => import(/* webpackChunkName: "about" */ './views/DeadEnd.vue'),
     },
     {
-      path: "/todo",
-      name: "Todolist",
+      path: '/todo',
+      name: 'Todolist',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/ToDo.vue"),
+      component: () => import(/* webpackChunkName: "about" */ './views/ToDo.vue'),
     },
   ],
-});
+})

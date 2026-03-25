@@ -1,7 +1,13 @@
 <template>
   <div class="intro">
     <h1>Welcome to Browser Riddles</h1>
-    <p ref="des">- A nonstop journey of learning web development</p>
+    <p ref="des">Where you may pick up or apply any browser experience to proceed</p>
+    <p>Hope this journey will spark some joy and fun 💖</p>
+    <!-- <button @click="goTodo()">
+      <h2>TODO LIST</h2>
+    </button>-->
+   
+ 
     <button
       @click="function() {
           $router.replace('/competitor');
@@ -17,7 +23,7 @@
 export default {
   data: function() {
     return {
-      open: truse,
+      open: true,
       displayAnimation: false,
     };
   },

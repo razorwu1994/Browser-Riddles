@@ -1,20 +1,19 @@
 <template>
   <div class="general">
-    <h1>Read Carefully Below Please!!!</h1>
-    <!-- <button @click="goTodo()">
-      <h2>TODO LIST</h2>
-    </button>-->
+    <h1>Toolkit</h1>
     <h2>
-      <p>The word after '/' is part of the level</p>
-      <p>
-        To step forward, all you need is to find a keyword from current level
+        To step forward, all you look for is a keyword from current level by piecing together the information
         and replace it with the current word after last '/'
-      </p>
-    </h2>
-    <h3>
+      </h2>
+    <div id="general-hint">
+      <h2>The word after '/' is also part of current level</h2>
+     
+      <h2>Then hit "Enter" 😃</h2>
+      <h3>
       Some levels may contain audio/video file, so please make sure lower down
       your volume a bit to avoid any unpleasant experience :)
     </h3>
+    </div>
     <div
       class="hintWrapper"
       :style="`grid-template:${displaySpoiler ? `50% 50%` : `100%`} !important`"
@@ -35,7 +34,7 @@
 <script>
 import { setInterval } from "timers";
 const HINTS = {
-  "/competitor": "What is this item",
+  "/competitor": "What is the name of current image on the screen?",
   "/howManyEllipses":
     "Now you know it is a react logo right? Simple enough, how many Ellipses in each logo and then ho....",
   "/12": "What the hell is a Promise",
@@ -57,15 +56,15 @@ const HINTS = {
   "/spiderman": "Who am I, dark spiderman or you can call me?",
 };
 const CORES = {
-  "/competitor": `Do you know you can right click on an image and "search google for image", find out what other frameworks folks may search for.`,
+  "/competitor": `Do you know you can right click on an image and click "search with google lens" for current image and then find out any other related "competitor" frameworks?`,
   "/howManyEllipses":
-    "In browsers, what is displaying in front of your eyes may not always be truth, images can be stacked together, there are some brotherhood images stacking if you know to use developer tool and look at elements tab to find out.",
+    "In browsers, what is displaying in front of your eyes may only represent part of the truth, images can be stacked together, there are some stacking up images if you right click anywhere on the web page and find `inspect` or `open developer tool` then use `Elements` tab to find out more about the total number of images then count the total ellipses.",
   "/12":
     "No matter Vue or React, its core programming language is Node JS(Normally people refers it to Javascript but they are actually slightly different), one of the core concept is called Promise, modern Node JS supports a type of function called 'async' to deal with it",
   "/internet":
     "When you open your favorite developer tool and check there is no hidden information in elements tab. Where could be information come from? Remember we are using internet right now, check out network and try to find a special request",
   "/realDB":
-    "This part should be relatively easy if you find elements with 'lookatme' class",
+    "This part should be relatively easy if you apply experience from level 2 and collect elements with 'lookatme' class",
   "/aintnowayout":
     "What is persistent in browser(even if you closed this tab and reopen it, like shopping in Amazon), have you heard about session/cookies? Try to checkout application tab in chrome and find a special value pair in localstorage(this level using this concept)",
   "/masbarcode":
@@ -79,7 +78,7 @@ const CORES = {
   "/welcomeToBWorld":
     "Do you know you can actually write mini code/program in browser console tab and use JQuery($ symbol) to speed up the elements selecting process.",
   "/spiderman":
-    "Dark version of spiderman is its villain, vendom, and this program itself is made of ? The web page logo and first level should tell you the key",
+    "Dark version of spiderman is its villain, venom, and this program itself is made of ? The web page logo and first level should tell you the key",
 };
 export default {
   mounted() {
@@ -147,12 +146,14 @@ export default {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 30%;
+  width: 50%;
   text-align: left;
   margin: 10px;
   border-radius: 4px;
   border: 2px dashed rosybrown;
   z-index: -1;
+  max-width:400px ;
+  text-align: center;
 }
 .hint {
   font-size: 35px;
@@ -181,7 +182,11 @@ button:hover {
   display: grid;
 }
 
-h2 > p {
-  font-style: italic;
+#general-hint{
+  display:none;
+
+}
+#general:hover #general-hint{
+  display:initial;
 }
 </style>

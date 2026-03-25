@@ -1,11 +1,11 @@
 
 <template>
   <div @mousemove="handleMouseMove" class="descriptive">
-    Where is the key staying overnight
+    Which direction does the key stay overnight
     <div class="compassWrapper">
       <img
         class="compass"
-        src="https://secure.img2-ag.wfcdn.com/im/23821347/resize-h700-p1-w700%5Ecompr-r85/2944/29445855/Metal+Compass+Wall+D%25E9cor.jpg"
+        src="../assets/compass.jpg"
       />
     </div>
     <div class="keywest" ref="keywest" v-if="displayKey">{{answer}}</div>
